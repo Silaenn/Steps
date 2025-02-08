@@ -38,25 +38,19 @@ function Steps() {
             <div className={steps >= 3 ? "active" : ""}>3</div>
           </div>
 
-          <p className="message">
-            Step {steps}: {messages[steps - 1]}
-          </p>
+          <StepMessage step={steps}>{messages[steps - 1]}</StepMessage>
 
           <div className="buttons">
             <Button
               onClick={previousStep}
-              text={"Previous"}
               bgColor={"#7950f2"}
               textColor={"#fff"}
-              emoji="👈"
-            />
-            <Button
-              onClick={nextStep}
-              text={"Next"}
-              bgColor={"#7950f2"}
-              textColor={"#fff"}
-              emoji="👉"
-            />
+            >
+              <span>👈</span>Previous
+            </Button>
+            <Button onClick={nextStep} bgColor={"#7950f2"} textColor={"#fff"}>
+              Next<span>👉</span>
+            </Button>
           </div>
         </div>
       )}
@@ -64,7 +58,18 @@ function Steps() {
   );
 }
 
-function Button({ text, onClick, bgColor, textColor, emoji }) {
+function StepMessage({ step, children }) {
+  return (
+    <div className="message">
+      <p>
+        <h3>Step {step} </h3>
+        {children}
+      </p>
+    </div>
+  );
+}
+
+function Button({ onClick, bgColor, textColor, children }) {
   return (
     <button
       style={{
@@ -73,7 +78,7 @@ function Button({ text, onClick, bgColor, textColor, emoji }) {
       }}
       onClick={onClick}
     >
-      <span>{emoji}</span> {text}
+      {children}
     </button>
   );
 }
