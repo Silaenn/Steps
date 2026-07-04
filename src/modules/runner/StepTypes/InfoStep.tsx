@@ -1,0 +1,20 @@
+import type { StepInputProps } from "../types";
+
+export function InfoStepRenderer({ step }: StepInputProps) {
+  return (
+    <div className="text-center py-8">
+      {"imageUrl" in step && step.imageUrl && (
+        <img
+          src={step.imageUrl}
+          alt=""
+          className="w-48 h-48 object-cover rounded-2xl mx-auto mb-6"
+        />
+      )}
+      {step.description && (
+        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-md mx-auto">
+          {step.description}
+        </p>
+      )}
+    </div>
+  );
+}

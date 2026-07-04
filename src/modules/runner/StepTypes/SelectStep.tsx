@@ -1,0 +1,28 @@
+import { clsx } from "clsx";
+import type { StepInputProps } from "../types";
+
+export function SelectStepRenderer({ step, value, error, onChange }: StepInputProps) {
+  const options = "options" in step ? step.options : [];
+
+  return (
+    <div>
+      <div className="grid gap-3">
+        {options.map((opt) => (
+          <button
+            key={opt}
+            onClick={() => onChange(opt)}
+            className={clsx(
+              "w-full text-left px-5 py-4 rounded-xl border-2 text-base font-medium transition-all",
+              value === opt
+                ? "border-[var(--primary)] bg-[var(--primary)]/5 text-gray-900 dark:text-white"
+                : "border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-600",
+            )}
+          >
+            {opt}
+          </button>
+        ))}
+      </div>
+      {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
+    </div>
+  );
+}
