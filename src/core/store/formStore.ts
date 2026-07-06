@@ -3,11 +3,13 @@ import { persist } from "zustand/middleware";
 import { nanoid } from "nanoid";
 import type { Form, FormResponse, Step } from "../types";
 import { DEFAULT_THEME } from "../types";
+import { createSeedForms } from "../seed";
 
 interface FormStore {
   forms: Form[];
   responses: FormResponse[];
 
+  seedStore: () => void;
   createForm: (title?: string) => string;
   updateForm: (id: string, data: Partial<Form>) => void;
   deleteForm: (id: string) => void;
@@ -29,7 +31,13 @@ export const useFormStore = create<FormStore>()(
       forms: [],
       responses: [],
 
-      createForm: (title = "Untitled Form") => {
+      seedStore: () => {
+    const { forms } = get();
+    if (forms.length > 0) return;
+    set({ forms: createSeedForms() });
+  },
+
+  createForm: (title = "Untitled Form") => {
         const id = nanoid();
         const form: Form = {
           id,
@@ -157,6 +165,13 @@ export const useFormStore = create<FormStore>()(
       getResponses: (formId) =>
         get().responses.filter((r) => r.formId === formId),
     }),
-    { name: "stepflow-storage" },
+    {
+      name: "stepflow-storage",
+      onRehydrateStorage: () => (state) => {
+        if (state && state.forms.length === 0) {
+          useFormStore.getState().seedStore();
+        }
+      },
+    },
   ),
 );
