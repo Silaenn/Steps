@@ -5,13 +5,13 @@ import { DashboardPage } from "./modules/dashboard/DashboardPage";
 import { BuilderPage } from "./modules/builder/BuilderPage";
 import { RunnerPage } from "./modules/runner/RunnerPage";
 import { ResponsesPage } from "./modules/dashboard/ResponsesPage";
-import { useFormStore } from "./core/store";
+import { useFormStore, SEED_VERSION } from "./core/store";
 
 export default function App() {
-  const forms = useFormStore((s) => s.forms);
+  const version = useFormStore((s) => s._seedVersion);
 
   useEffect(() => {
-    if (forms.length === 0) {
+    if (version < SEED_VERSION) {
       useFormStore.getState().seedStore();
     }
   }, []);

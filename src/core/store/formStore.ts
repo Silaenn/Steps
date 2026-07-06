@@ -5,9 +5,12 @@ import type { Form, FormResponse, Step } from "../types";
 import { DEFAULT_THEME } from "../types";
 import { createSeedForms } from "../seed";
 
+export const SEED_VERSION = 2;
+
 interface FormStore {
   forms: Form[];
   responses: FormResponse[];
+  _seedVersion: number;
 
   seedStore: () => void;
   createForm: (title?: string) => string;
@@ -30,11 +33,10 @@ export const useFormStore = create<FormStore>()(
     (set, get) => ({
       forms: [],
       responses: [],
+      _seedVersion: 0,
 
       seedStore: () => {
-    const { forms } = get();
-    if (forms.length > 0) return;
-    set({ forms: createSeedForms() });
+    set({ forms: createSeedForms(), _seedVersion: SEED_VERSION });
   },
 
   createForm: (title = "Untitled Form") => {

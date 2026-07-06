@@ -1,1 +1,1 @@
-export { useFormStore } from "./formStore";
+export { useFormStore, SEED_VERSION } from "./formStore";
