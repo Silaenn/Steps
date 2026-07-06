@@ -7,12 +7,8 @@ export function Header() {
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-[var(--primary)] flex items-center justify-center">
-              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h8m-8 6h16" />
-              </svg>
-            </div>
-            <span className="text-lg font-bold text-gray-900 dark:text-white">
+            <img src="/logo.png" alt="StepFlow" className="w-6 h-6" />
+            <span className="text-base font-bold text-gray-900 dark:text-white">
               StepFlow
             </span>
           </Link>
