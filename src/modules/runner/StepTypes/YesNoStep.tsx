@@ -12,7 +12,7 @@ export function YesNoStepRenderer({ step, value, error, onChange }: StepInputPro
         <button
           onClick={() => onChange("yes")}
           className={clsx(
-            "px-8 py-6 rounded-xl border-2 text-lg font-semibold transition-all",
+            "px-4 sm:px-8 py-4 sm:py-6 rounded-xl border-2 text-lg font-semibold transition-all",
             value === "yes"
               ? "border-green-500 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300"
               : "border-gray-200 dark:border-stone-700 text-gray-600 dark:text-stone-400 hover:border-gray-300",
@@ -26,7 +26,7 @@ export function YesNoStepRenderer({ step, value, error, onChange }: StepInputPro
         <button
           onClick={() => onChange("no")}
           className={clsx(
-            "px-8 py-6 rounded-xl border-2 text-lg font-semibold transition-all",
+            "px-4 sm:px-8 py-4 sm:py-6 rounded-xl border-2 text-lg font-semibold transition-all",
             value === "no"
               ? "border-red-500 bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300"
               : "border-gray-200 dark:border-stone-700 text-gray-600 dark:text-stone-400 hover:border-gray-300",

@@ -6,7 +6,8 @@ import type { Step, StepType } from "../../core/types";
 import { Button } from "../shared/ui/Button";
 import { StepList } from "./StepList";
 import { StepConfigByType } from "./StepConfigByType";
-import { ChevronLeft, Play } from "lucide-react";
+import { ChevronLeft, Play, Layers } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 function createDefaultStep(type: StepType): Step {
   const base = {
@@ -43,6 +44,7 @@ export function BuilderPage() {
   const reorderSteps = useFormStore((s) => s.reorderSteps);
 
   const [selectedStepId, setSelectedStepId] = useState<string | null>(null);
+  const [mobileStepsOpen, setMobileStepsOpen] = useState(false);
   const created = useRef(false);
 
   useEffect(() => {
@@ -84,10 +86,10 @@ export function BuilderPage() {
   return (
     <div className="flex flex-col flex-1">
       <div className="p-4 border-b border-gray-200 dark:border-stone-800 bg-white dark:bg-stone-950 shrink-0">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <Button variant="ghost" onClick={() => navigate("/")} className="shrink-0">
               <ChevronLeft className="w-4 h-4" />
-              Back
+              <span className="hidden sm:inline">Back</span>
             </Button>
             <div className="flex-1 min-w-0">
               <input
@@ -105,20 +107,64 @@ export function BuilderPage() {
             </div>
             <Button variant="primary" onClick={() => navigate(`/runner/${form.id}`)} className="shrink-0">
               <Play className="w-4 h-4" />
-              Run Form
+              <span className="hidden sm:inline">Run Form</span>
             </Button>
           </div>
         </div>
 
         <div className="flex flex-1 overflow-hidden">
-          <StepList
-            steps={form.steps}
-            selectedId={selectedStepId}
-            onSelect={setSelectedStepId}
-            onReorder={(from, to) => reorderSteps(form.id, from, to)}
-            onAdd={handleAddStep}
-            onRemove={handleRemoveStep}
-          />
+          {/* Mobile: floating toggle button */}
+          <button
+            className="md:hidden fixed bottom-6 right-6 z-50 w-12 h-12 rounded-lg bg-[var(--primary)] text-white flex items-center justify-center"
+            onClick={() => setMobileStepsOpen(!mobileStepsOpen)}
+          >
+            <Layers className="w-5 h-5" />
+          </button>
+
+          {/* Mobile: animated overlay drawer */}
+          <AnimatePresence>
+            {mobileStepsOpen && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="fixed inset-0 top-16 z-30 md:hidden"
+                onClick={() => setMobileStepsOpen(false)}
+              >
+                <div className="absolute inset-0 bg-black/50" />
+                <motion.div
+                  initial={{ x: '-100%' }}
+                  animate={{ x: 0 }}
+                  exit={{ x: '-100%' }}
+                  transition={{ type: 'tween', duration: 0.2, ease: 'easeOut' }}
+                  className="absolute left-0 top-0 bottom-0 w-72 bg-white dark:bg-stone-900 border-r border-gray-200 dark:border-stone-800"
+                  onClick={e => e.stopPropagation()}
+                >
+                  <StepList
+                    steps={form.steps}
+                    selectedId={selectedStepId}
+                    onSelect={(id) => { setSelectedStepId(id); setMobileStepsOpen(false); }}
+                    onReorder={(from, to) => reorderSteps(form.id, from, to)}
+                    onAdd={handleAddStep}
+                    onRemove={handleRemoveStep}
+                  />
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Desktop: inline sidebar */}
+          <div className="hidden md:flex flex-col">
+            <StepList
+              steps={form.steps}
+              selectedId={selectedStepId}
+              onSelect={setSelectedStepId}
+              onReorder={(from, to) => reorderSteps(form.id, from, to)}
+              onAdd={handleAddStep}
+              onRemove={handleRemoveStep}
+            />
+          </div>
           <div className="flex-1 overflow-y-auto p-6">
           {!selectedStep ? (
             <div className="flex items-center justify-center h-full text-gray-400">

@@ -34,7 +34,7 @@ export function StepConfigByType({ step, onChange }: StepConfigByTypeProps) {
               onChange={(e) => set({ placeholder: e.target.value } as Partial<Step>)}
             />
           </div>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label className="block text-sm font-medium mb-1">Min Length</label>
               <input
@@ -72,7 +72,7 @@ export function StepConfigByType({ step, onChange }: StepConfigByTypeProps) {
 
     case "number":
       return (
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label className="block text-sm font-medium mb-1">Min</label>
             <input
@@ -134,7 +134,7 @@ export function StepConfigByType({ step, onChange }: StepConfigByTypeProps) {
 
     case "date":
       return (
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label className="block text-sm font-medium mb-1">Min Date</label>
             <input
@@ -158,7 +158,7 @@ export function StepConfigByType({ step, onChange }: StepConfigByTypeProps) {
 
     case "yesno":
       return (
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label className="block text-sm font-medium mb-1">Yes Label</label>
             <input

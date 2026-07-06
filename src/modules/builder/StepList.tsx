@@ -61,7 +61,7 @@ export function StepList({ steps, selectedId, onSelect, onReorder, onAdd, onRemo
   );
 
   return (
-    <div className="w-72 border-r border-gray-200 dark:border-stone-800 bg-gray-50 dark:bg-stone-900/50 flex flex-col">
+    <div className="w-72 border-r border-gray-200 dark:border-stone-800 bg-gray-50 dark:bg-stone-900/50 flex flex-col h-full">
       <div className="flex-1 overflow-y-auto p-2">
         {steps.length === 0 && (
           <div className="flex flex-col items-center justify-center h-full text-sm text-gray-400 text-center px-2">

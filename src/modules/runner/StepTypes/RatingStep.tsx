@@ -8,13 +8,13 @@ export function RatingStepRenderer({ step, value, error, onChange }: StepInputPr
 
   return (
     <div>
-      <div className="flex items-center justify-center gap-2 py-4">
+      <div className="flex items-center justify-center gap-1 sm:gap-2 py-4">
         {Array.from({ length: maxRating }, (_, i) => i + 1).map((star) => (
           <button
             key={star}
             onClick={() => onChange(star)}
             className={clsx(
-              "w-12 h-12 rounded-lg text-2xl flex items-center justify-center transition-all",
+              "w-10 sm:w-12 h-10 sm:h-12 rounded-lg text-xl sm:text-2xl flex items-center justify-center transition-all",
               star <= rating
                 ? "bg-yellow-100 dark:bg-yellow-900/30 scale-110"
                 : "bg-gray-100 dark:bg-stone-800 text-gray-300 dark:text-stone-600",
