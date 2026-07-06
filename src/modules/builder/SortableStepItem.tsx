@@ -75,7 +75,7 @@ export function SortableStepItem({ step, index, isSelected, onSelect, onRemove }
 
       <button
         onClick={(e) => { e.stopPropagation(); onRemove(step.id); }}
-        className="text-gray-400 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100"
+        className="text-gray-300 dark:text-gray-600 hover:text-red-500 transition-colors"
       >
         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
