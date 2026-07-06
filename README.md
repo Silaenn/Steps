@@ -87,12 +87,8 @@ Every form you build is persisted locally via Zustand and can be previewed, shar
 ---
 
 ## Screenshots
+<img width="1920" height="964" alt="StepFlow(2)" src="https://github.com/user-attachments/assets/799ff022-bf2f-4501-a2b7-560b08902ed6" />
 
-> _Screenshots coming soon. Run the project locally to see it in action._
-
-```
-Dashboard  ───  Builder  ───  Runner  ───  Analytics
-```
 
 ---
 
