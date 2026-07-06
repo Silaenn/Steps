@@ -1,6 +1,8 @@
 import type { FormResponse, Form } from "../../core/types";
+import { useFormStore } from "../../core/store";
 import { Button } from "../shared/ui/Button";
 import { exportResponsesToCSV, exportResponsesToJSON } from "../../core/utils/export";
+import { Trash2 } from "lucide-react";
 
 interface ResponseTableProps {
   form: Form;
@@ -54,6 +56,7 @@ export function ResponseTable({ form, responses }: ResponseTableProps) {
                 </th>
               ))}
               <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Date</th>
+              <th className="w-16 px-4 py-3 font-medium text-gray-500 dark:text-gray-400"></th>
             </tr>
           </thead>
           <tbody>
@@ -74,6 +77,19 @@ export function ResponseTable({ form, responses }: ResponseTableProps) {
                 })}
                 <td className="px-4 py-3 text-gray-500 text-xs">
                   {new Date(response.completedAt).toLocaleDateString()}
+                </td>
+                <td className="px-4 py-3">
+                  <button
+                    onClick={() => {
+                      if (window.confirm("Delete this response?")) {
+                        useFormStore.getState().deleteResponse(form.id, response.id);
+                      }
+                    }}
+                    className="p-1.5 rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
+                    title="Delete response"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </button>
                 </td>
               </tr>
             ))}
