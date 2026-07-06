@@ -17,7 +17,7 @@ export function createSeedForms(): Form[] {
       theme: { ...DEFAULT_THEME },
       createdAt: now - 86400000 * 10,
       updatedAt: now - 86400000 * 2,
-      responseCount: 24,
+      responseCount: 0,
       steps: [
         step({ type: "info", title: "We Value Your Opinion", description: "This quick survey will take less than 2 minutes. Your responses are anonymous." }),
         step({ type: "rating", title: "Overall Satisfaction", description: "How would you rate your experience?", required: true, maxRating: 5 }),
@@ -33,7 +33,7 @@ export function createSeedForms(): Form[] {
       theme: { ...DEFAULT_THEME },
       createdAt: now - 86400000 * 7,
       updatedAt: now - 86400000 * 1,
-      responseCount: 18,
+      responseCount: 0,
       steps: [
         step({ type: "text", title: "Full Name", description: "Enter your first and last name.", required: true, placeholder: "John Doe" }),
         step({ type: "email", title: "Email Address", description: "We'll send you a confirmation.", required: true, placeholder: "john@company.com" }),
@@ -49,7 +49,7 @@ export function createSeedForms(): Form[] {
       theme: { ...DEFAULT_THEME },
       createdAt: now - 86400000 * 14,
       updatedAt: now - 86400000 * 3,
-      responseCount: 156,
+      responseCount: 0,
       steps: [
         step({ type: "text", title: "Full Name", description: "Name as it appears on your ID.", required: true, placeholder: "Jane Smith" }),
         step({ type: "email", title: "Email Address", description: "Your registration confirmation will be sent here.", required: true, placeholder: "jane@example.com" }),
@@ -65,7 +65,7 @@ export function createSeedForms(): Form[] {
       theme: { ...DEFAULT_THEME },
       createdAt: now - 86400000 * 5,
       updatedAt: now - 86400000 * 1,
-      responseCount: 42,
+      responseCount: 0,
       steps: [
         step({ type: "select", title: "Product", description: "Select the product you'd like to order.", required: true, options: ["Standard Widget", "Premium Widget", "Widget Pro", "Widget Bundle"], multiple: false }),
         step({ type: "multiselect", title: "Add-ons", description: "Choose any optional extras.", required: false, options: ["Extended Warranty", "Gift Wrapping", "Express Shipping", "Engraving"], multiple: true }),
@@ -80,7 +80,7 @@ export function createSeedForms(): Form[] {
       theme: { ...DEFAULT_THEME },
       createdAt: now - 86400000 * 3,
       updatedAt: now,
-      responseCount: 89,
+      responseCount: 0,
       steps: [
         step({ type: "info", title: "Pop Culture Quiz", description: "5 questions to test your knowledge. Good luck!" }),
         step({ type: "multiselect", title: "Which of these are programming languages?", required: true, options: ["Python", "Banana", "TypeScript", "Coffee"], multiple: true }),
@@ -96,7 +96,7 @@ export function createSeedForms(): Form[] {
       theme: { ...DEFAULT_THEME },
       createdAt: now - 86400000 * 30,
       updatedAt: now - 86400000 * 5,
-      responseCount: 312,
+      responseCount: 0,
       steps: [
         step({ type: "info", title: "We're Here to Help", description: "Fill out the form below and we'll get back to you within 24 hours." }),
         step({ type: "text", title: "Your Name", description: "How should we address you?", required: true, placeholder: "Alex Johnson" }),
