@@ -26,7 +26,7 @@ export function ResponsesPage() {
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="flex items-center gap-4 mb-8">
         <Link
-          to={`/builder/${form.id}`}
+          to={'/'}
           className="p-2 -ml-2 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
         >
           <ChevronLeft className="w-5 h-5" />
