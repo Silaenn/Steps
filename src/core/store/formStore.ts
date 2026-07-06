@@ -165,13 +165,6 @@ export const useFormStore = create<FormStore>()(
       getResponses: (formId) =>
         get().responses.filter((r) => r.formId === formId),
     }),
-    {
-      name: "stepflow-storage",
-      onRehydrateStorage: () => (state) => {
-        if (state && state.forms.length === 0) {
-          useFormStore.getState().seedStore();
-        }
-      },
-    },
+    { name: "stepflow-storage" },
   ),
 );
