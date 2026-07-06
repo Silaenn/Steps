@@ -93,23 +93,31 @@ export function BuilderPage() {
       />
 
         <div className="flex-1 flex flex-col">
-        <div className="p-4 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between bg-white dark:bg-gray-950">
-          <div className="flex items-center gap-4">
-            <Button variant="ghost" onClick={() => navigate("/")}>
-              <ChevronLeft className="w-4 h-4" />
-              Back
+        <div className="p-4 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4 min-w-0">
+              <Button variant="ghost" onClick={() => navigate("/")} className="shrink-0">
+                <ChevronLeft className="w-4 h-4" />
+                Back
+              </Button>
+              <input
+                className="text-lg font-bold bg-transparent border-none outline-none focus:ring-0 text-gray-900 dark:text-white min-w-0"
+                value={form.title}
+                onChange={(e) => updateForm(form.id, { title: e.target.value })}
+                placeholder="Form Title"
+              />
+            </div>
+            <Button variant="primary" onClick={() => navigate(`/runner/${form.id}`)} className="shrink-0">
+              <Play className="w-4 h-4" />
+              Run Form
             </Button>
-            <input
-              className="text-lg font-bold bg-transparent border-none outline-none focus:ring-0 text-gray-900 dark:text-white"
-              value={form.title}
-              onChange={(e) => updateForm(form.id, { title: e.target.value })}
-              placeholder="Form Title"
-            />
           </div>
-          <Button variant="primary" onClick={() => navigate(`/runner/${form.id}`)}>
-            <Play className="w-4 h-4" />
-            Run Form
-          </Button>
+          <input
+            className="block w-full text-sm text-gray-500 dark:text-gray-400 bg-transparent border-none outline-none focus:ring-0 mt-2 placeholder-gray-400"
+            value={form.description}
+            onChange={(e) => updateForm(form.id, { description: e.target.value })}
+            placeholder="Form description (optional)"
+          />
         </div>
 
         <div className="flex-1 overflow-y-auto p-6">
