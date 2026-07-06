@@ -82,7 +82,7 @@ export function BuilderPage() {
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-4rem)]">
+    <div className="flex flex-col flex-1">
       <div className="p-4 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shrink-0">
           <div className="flex items-center gap-4">
             <Button variant="ghost" onClick={() => navigate("/")} className="shrink-0">

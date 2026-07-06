@@ -83,7 +83,7 @@ export function RunnerPage() {
 
   if (completed) {
     return (
-      <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] px-4">
+      <div className="flex-1 flex flex-col items-center px-4 pt-60">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -117,7 +117,7 @@ export function RunnerPage() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex flex-col">
+    <div className="flex-1 flex flex-col">
       <div className="w-full bg-gray-100 dark:bg-gray-800 h-1.5">
         <motion.div
           className="h-full bg-[var(--primary)]"
