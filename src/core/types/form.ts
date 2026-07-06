@@ -9,8 +9,8 @@ export interface FormTheme {
 }
 
 export const DEFAULT_THEME: FormTheme = {
-  primaryColor: "#7c3aed",
-  fontFamily: "Inter, system-ui, sans-serif",
+  primaryColor: "#C75B39",
+  fontFamily: "Space Grotesk, Outfit, system-ui, sans-serif",
   borderRadius: "lg",
   backgroundStyle: "solid",
   backgroundValue: "#ffffff",

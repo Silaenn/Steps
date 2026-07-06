@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --primary: #7c3aed;
+    --primary: #C75B39;
   }
 
   *,
@@ -14,13 +14,17 @@
   }
 
   body {
-    @apply bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100;
+    @apply bg-[#FAF6F2] text-gray-900 dark:bg-gray-950 dark:text-gray-100;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', 'Outfit', system-ui, sans-serif;
   }
 }
 
 @layer components {
   .stepflow-card {
-    @apply bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm;
+    @apply bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800;
   }
 
   .stepflow-input {
@@ -31,6 +35,5 @@
     outline: 2px solid transparent;
     outline-offset: 2px;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
   }
 }

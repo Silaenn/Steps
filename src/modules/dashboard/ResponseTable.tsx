@@ -45,7 +45,7 @@ export function ResponseTable({ form, responses }: ResponseTableProps) {
         </div>
       </div>
 
-      <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-800">
+      <div className="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-800">
         <table className="w-full text-sm">
           <thead>
             <tr className="bg-gray-50 dark:bg-gray-900">

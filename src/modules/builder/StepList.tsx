@@ -65,7 +65,7 @@ export function StepList({ steps, selectedId, onSelect, onReorder, onAdd, onRemo
       <div className="flex-1 overflow-y-auto p-2">
         {steps.length === 0 && (
           <div className="flex flex-col items-center justify-center h-full text-sm text-gray-400 text-center px-2">
-            <div className="w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-2">
+            <div className="w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-2">
               <Layers className="w-5 h-5" />
             </div>
             <p>No steps yet</p>
@@ -102,7 +102,7 @@ export function StepList({ steps, selectedId, onSelect, onReorder, onAdd, onRemo
         {showAddMenu && (
           <>
             <div className="fixed inset-0 z-10" onClick={() => setShowAddMenu(false)} />
-            <div className="absolute bottom-full left-0 right-0 mb-1 z-20 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 p-2 max-h-64 overflow-y-auto">
+            <div className="absolute bottom-full left-0 right-0 mb-1 z-20 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-2 max-h-64 overflow-y-auto">
               {STEP_TYPES.map(({ type, label, icon }) => (
                 <button
                   key={type}

@@ -7,7 +7,7 @@ export function InfoStepRenderer({ step }: StepInputProps) {
         <img
           src={step.imageUrl}
           alt=""
-          className="w-48 h-48 object-cover rounded-2xl mx-auto mb-6"
+          className="w-48 h-48 object-cover rounded-lg mx-auto mb-6"
         />
       )}
       {step.description && (

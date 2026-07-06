@@ -96,7 +96,7 @@ export function RunnerPage() {
           <p className="text-gray-500 dark:text-gray-400 mb-8">Thank you for completing the form.</p>
           <button
             onClick={() => { setCurrentStep(0); setAnswers({}); setErrors({}); setCompleted(false); }}
-            className="px-6 py-3 bg-[var(--primary)] text-white rounded-xl font-medium hover:brightness-110 transition-all"
+            className="px-6 py-3 bg-[var(--primary)] text-white rounded-lg font-medium hover:brightness-110 transition-all"
           >
             Submit Another Response
           </button>
@@ -151,7 +151,7 @@ export function RunnerPage() {
                   i === currentStep
                     ? "bg-[var(--primary)] scale-125"
                     : i < currentStep
-                      ? "bg-purple-300 dark:bg-purple-700"
+                      ? "bg-[var(--primary)]/30 dark:bg-[var(--primary)]/50"
                       : "bg-gray-200 dark:bg-gray-700",
                 )}
               />
@@ -204,7 +204,7 @@ export function RunnerPage() {
 
             <button
               onClick={handleNext}
-              className="inline-flex items-center gap-1.5 px-6 py-2.5 bg-[var(--primary)] text-white rounded-xl text-sm font-medium hover:brightness-110 transition-all shadow-sm"
+              className="inline-flex items-center gap-1.5 px-6 py-2.5 bg-[var(--primary)] text-white rounded-lg text-sm font-medium hover:brightness-110 transition-all"
             >
               {isLastStep ? "Submit" : "Next"}
               {!isLastStep && <ArrowRight className="w-4 h-4" />}

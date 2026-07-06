@@ -50,7 +50,7 @@ export function SortableStepItem({ step, index, isSelected, onSelect, onRemove }
         isSelected
           ? "bg-[var(--primary)]/10 border-[var(--primary)]/30 text-gray-900 dark:text-white"
           : "bg-white dark:bg-gray-800 border-transparent text-gray-700 dark:text-gray-300 hover:border-gray-200 dark:hover:border-gray-700",
-        isDragging && "opacity-50 shadow-lg",
+        isDragging && "opacity-50",
       )}
       onClick={() => onSelect(step.id)}
     >

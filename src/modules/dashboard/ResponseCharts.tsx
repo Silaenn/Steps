@@ -13,7 +13,7 @@ import {
 import type { Form, FormResponse, Step } from "../../core/types";
 import { Star } from "lucide-react";
 
-const COLORS = ["#7c3aed", "#a78bfa", "#c4b5fd", "#8b5cf6", "#6d28d9", "#5b21b6"];
+const COLORS = ["#C75B39", "#2D5A4B", "#E8B84B", "#D4845E", "#3A7C6A", "#1A1A1A"];
 
 interface ResponseChartsProps {
   form: Form;
@@ -56,7 +56,7 @@ function SelectChart({ step, responses }: { step: Step; responses: FormResponse[
           <XAxis dataKey="name" tick={{ fontSize: 12 }} />
           <YAxis tick={{ fontSize: 12 }} />
           <Tooltip />
-          <Bar dataKey="value" fill="#7c3aed" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="value" fill="#C75B39" radius={[4, 4, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </div>
@@ -126,7 +126,7 @@ function RatingChart({ step, responses }: { step: Step; responses: FormResponse[
           <XAxis dataKey="name" tick={<RatingTick />} />
           <YAxis tick={{ fontSize: 12 }} />
           <Tooltip />
-          <Bar dataKey="value" fill="#a78bfa" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="value" fill="#2D5A4B" radius={[4, 4, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </div>
