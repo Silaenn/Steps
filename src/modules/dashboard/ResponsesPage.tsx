@@ -23,7 +23,8 @@ export function ResponsesPage() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="flex-1 flex flex-col">
+      <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 flex flex-col">
       <div className="flex items-center gap-4 mb-8">
         <Link
           to={'/'}
@@ -41,6 +42,7 @@ export function ResponsesPage() {
 
       <ResponseCharts form={form} responses={responses} />
       <ResponseTable form={form} responses={responses} />
+      </div>
     </div>
   );
 }

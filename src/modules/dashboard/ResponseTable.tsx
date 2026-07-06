@@ -12,7 +12,7 @@ interface ResponseTableProps {
 export function ResponseTable({ form, responses }: ResponseTableProps) {
   if (responses.length === 0) {
     return (
-      <div className="text-center py-12 text-gray-500 dark:text-gray-400">
+      <div className="flex-1 text-center text-gray-500 dark:text-gray-400 pt-36">
         <p className="text-lg font-medium mb-1">No responses yet</p>
         <p className="text-sm">Share your form to start collecting responses.</p>
       </div>
