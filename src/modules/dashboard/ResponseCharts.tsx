@@ -11,6 +11,7 @@ import {
   Legend,
 } from "recharts";
 import type { Form, FormResponse, Step } from "../../core/types";
+import { Star } from "lucide-react";
 
 const COLORS = ["#7c3aed", "#a78bfa", "#c4b5fd", "#8b5cf6", "#6d28d9", "#5b21b6"];
 
@@ -101,14 +102,28 @@ function RatingChart({ step, responses }: { step: Step; responses: FormResponse[
     const v = r.answers[step.id];
     if (typeof v === "number" && counts[String(v)] !== undefined) counts[String(v)]!++;
   }
-  const data = Object.entries(counts).map(([name, value]) => ({ name: `⭐${name}`, value }));
+  const data = Object.entries(counts).map(([name, value]) => ({ name, value }));
+
+  function RatingTick(props: any) {
+    const { x, y, payload } = props;
+    return (
+      <g transform={`translate(${x},${y})`}>
+        <foreignObject x={-14} y={-10} width={28} height={20}>
+          <div className="flex items-center justify-center gap-0.5 text-xs text-gray-400">
+            <Star size={10} strokeWidth={1.5} />
+            <span>{payload.value}</span>
+          </div>
+        </foreignObject>
+      </g>
+    );
+  }
 
   return (
     <div className="stepflow-card p-4">
       <h4 className="font-medium text-sm mb-3">{step.title}</h4>
       <ResponsiveContainer width="100%" height={200}>
         <BarChart data={data}>
-          <XAxis dataKey="name" tick={{ fontSize: 12 }} />
+          <XAxis dataKey="name" tick={<RatingTick />} />
           <YAxis tick={{ fontSize: 12 }} />
           <Tooltip />
           <Bar dataKey="value" fill="#a78bfa" radius={[4, 4, 0, 0]} />

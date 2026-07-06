@@ -1,5 +1,6 @@
 import { clsx } from "clsx";
 import type { StepInputProps } from "../types";
+import { ThumbsUp, ThumbsDown } from "lucide-react";
 
 export function YesNoStepRenderer({ step, value, error, onChange }: StepInputProps) {
   const yesLabel = "yesLabel" in step && step.yesLabel ? step.yesLabel : "Yes";
@@ -17,7 +18,9 @@ export function YesNoStepRenderer({ step, value, error, onChange }: StepInputPro
               : "border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300",
           )}
         >
-          <div className="text-3xl mb-2">👍</div>
+          <div className="mb-2 flex justify-center">
+            <ThumbsUp className="w-9 h-9" />
+          </div>
           {yesLabel}
         </button>
         <button
@@ -29,7 +32,9 @@ export function YesNoStepRenderer({ step, value, error, onChange }: StepInputPro
               : "border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300",
           )}
         >
-          <div className="text-3xl mb-2">👎</div>
+          <div className="mb-2 flex justify-center">
+            <ThumbsDown className="w-9 h-9" />
+          </div>
           {noLabel}
         </button>
       </div>

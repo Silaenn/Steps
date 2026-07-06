@@ -2,11 +2,20 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { clsx } from "clsx";
 import type { Step } from "../../core/types";
+import { Info, FileText, Mail, Hash, File, List, CheckSquare, Star, Calendar, Phone, CheckCircle } from "lucide-react";
 
-const TYPE_ICONS: Record<string, string> = {
-  info: "ℹ️", text: "📝", email: "📧", number: "🔢",
-  textarea: "📄", select: "📋", multiselect: "☑️",
-  rating: "⭐", date: "📅", phone: "📞", yesno: "✅",
+const TYPE_ICONS: Record<string, React.ReactNode> = {
+  info: <Info size={16} />,
+  text: <FileText size={16} />,
+  email: <Mail size={16} />,
+  number: <Hash size={16} />,
+  textarea: <File size={16} />,
+  select: <List size={16} />,
+  multiselect: <CheckSquare size={16} />,
+  rating: <Star size={16} />,
+  date: <Calendar size={16} />,
+  phone: <Phone size={16} />,
+  yesno: <CheckCircle size={16} />,
 };
 
 interface SortableStepItemProps {
@@ -55,7 +64,9 @@ export function SortableStepItem({ step, index, isSelected, onSelect, onRemove }
         </svg>
       </button>
 
-      <span>{TYPE_ICONS[step.type] || "📋"}</span>
+      <span className="inline-flex items-center justify-center w-5 h-5 shrink-0">
+        {TYPE_ICONS[step.type] ?? <List size={16} />}
+      </span>
 
       <div className="flex-1 min-w-0">
         <p className="truncate font-medium">{step.title || `Step ${index + 1}`}</p>

@@ -15,6 +15,7 @@ import {
 } from "@dnd-kit/sortable";
 import type { Step, StepType } from "../../core/types";
 import { SortableStepItem } from "./SortableStepItem";
+import { Info, FileText, Mail, Hash, File, List, CheckSquare, Star, Calendar, Phone, CheckCircle } from "lucide-react";
 
 interface StepListProps {
   steps: Step[];
@@ -25,18 +26,18 @@ interface StepListProps {
   onRemove: (id: string) => void;
 }
 
-const STEP_TYPES: { type: StepType; label: string; icon: string }[] = [
-  { type: "info", label: "Info", icon: "ℹ️" },
-  { type: "text", label: "Text", icon: "📝" },
-  { type: "email", label: "Email", icon: "📧" },
-  { type: "number", label: "Number", icon: "🔢" },
-  { type: "textarea", label: "Textarea", icon: "📄" },
-  { type: "select", label: "Select", icon: "📋" },
-  { type: "multiselect", label: "Multi Select", icon: "☑️" },
-  { type: "rating", label: "Rating", icon: "⭐" },
-  { type: "date", label: "Date", icon: "📅" },
-  { type: "phone", label: "Phone", icon: "📞" },
-  { type: "yesno", label: "Yes/No", icon: "✅" },
+const STEP_TYPES: { type: StepType; label: string; icon: React.ReactNode }[] = [
+  { type: "info", label: "Info", icon: <Info size={16} /> },
+  { type: "text", label: "Text", icon: <FileText size={16} /> },
+  { type: "email", label: "Email", icon: <Mail size={16} /> },
+  { type: "number", label: "Number", icon: <Hash size={16} /> },
+  { type: "textarea", label: "Textarea", icon: <File size={16} /> },
+  { type: "select", label: "Select", icon: <List size={16} /> },
+  { type: "multiselect", label: "Multi Select", icon: <CheckSquare size={16} /> },
+  { type: "rating", label: "Rating", icon: <Star size={16} /> },
+  { type: "date", label: "Date", icon: <Calendar size={16} /> },
+  { type: "phone", label: "Phone", icon: <Phone size={16} /> },
+  { type: "yesno", label: "Yes/No", icon: <CheckCircle size={16} /> },
 ];
 
 export function StepList({ steps, selectedId, onSelect, onReorder, onAdd, onRemove }: StepListProps) {
@@ -83,7 +84,9 @@ export function StepList({ steps, selectedId, onSelect, onReorder, onAdd, onRemo
                     onClick={() => { onAdd(type); setShowAddMenu(false); }}
                     className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-left"
                   >
-                    <span>{icon}</span>
+                    <span className="inline-flex items-center justify-center w-5 h-5 shrink-0">
+                      {icon}
+                    </span>
                     <span>{label}</span>
                   </button>
                 ))}

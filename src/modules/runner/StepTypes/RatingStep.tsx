@@ -1,5 +1,6 @@
 import { clsx } from "clsx";
 import type { StepInputProps } from "../types";
+import { Star } from "lucide-react";
 
 export function RatingStepRenderer({ step, value, error, onChange }: StepInputProps) {
   const maxRating = "maxRating" in step ? step.maxRating : 5;
@@ -19,7 +20,14 @@ export function RatingStepRenderer({ step, value, error, onChange }: StepInputPr
                 : "bg-gray-100 dark:bg-gray-800 text-gray-300 dark:text-gray-600",
             )}
           >
-            ⭐
+            <Star
+              className={clsx(
+                "w-6 h-6 transition-all",
+                star <= rating
+                  ? "fill-yellow-500 text-yellow-500"
+                  : "text-gray-300 dark:text-gray-600",
+              )}
+            /          >
           </button>
         ))}
       </div>
