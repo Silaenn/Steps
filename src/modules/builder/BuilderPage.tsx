@@ -85,7 +85,7 @@ export function BuilderPage() {
 
   return (
     <div className="flex flex-col flex-1">
-      <div className="p-4 border-b border-gray-200 dark:border-stone-800 bg-white dark:bg-stone-950 shrink-0">
+      <div className="p-6 border-b border-gray-200 dark:border-stone-800 bg-white dark:bg-stone-950 shrink-0">
           <div className="flex items-center gap-2 sm:gap-4">
             <Button variant="ghost" onClick={() => navigate("/")} className="shrink-0">
               <ChevronLeft className="w-4 h-4" />
@@ -169,11 +169,9 @@ export function BuilderPage() {
           {!selectedStep ? (
             <div className="flex items-center justify-center h-full text-gray-500 dark:text-stone-400">
               <div className="text-center">
-                <div className="w-16 h-16 rounded-lg bg-gray-100 dark:bg-stone-800 flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-10 h-10 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                </div>
                 <p className="text-sm">Select a step from the sidebar to edit, or add a new step.</p>
               </div>
             </div>

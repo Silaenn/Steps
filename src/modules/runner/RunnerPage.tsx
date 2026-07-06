@@ -83,13 +83,13 @@ export function RunnerPage() {
 
   if (completed) {
     return (
-      <div className="flex-1 flex flex-col items-center px-4 pt-60">
+      <div className="flex-1 flex flex-col items-center justify-center px-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           className="text-center max-w-md"
         >
-          <div className="w-20 h-20 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-6">
+          <div className="w-20 h-20 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-4">
             <CheckCircle className="w-10 h-10 text-green-500" />
           </div>
           <h2 className="text-2xl font-bold mb-2">Response Submitted!</h2>
@@ -127,7 +127,7 @@ export function RunnerPage() {
         />
       </div>
 
-      <div className="flex items-center gap-4 px-6 py-4 border-b border-gray-200 dark:border-stone-800 bg-white dark:bg-stone-950">
+      <div className="flex items-center gap-4 px-4 py-4 border-b border-gray-200 dark:border-stone-800 bg-white dark:bg-stone-950">
         <Link
           to={`/builder/${id}`}
           className="p-2 -ml-2 rounded-lg text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 hover:bg-gray-100 dark:hover:bg-stone-800 transition-colors"
@@ -142,7 +142,7 @@ export function RunnerPage() {
 
       <div className="flex-1 overflow-y-auto px-4">
         <div className="max-w-lg mx-auto pt-10 pb-16">
-          <div className="flex items-center justify-center gap-2 mb-12">
+          <div className="flex items-center justify-center gap-2 mb-8">
             {form.steps.map((_, i) => (
               <div
                 key={i}
@@ -192,7 +192,7 @@ export function RunnerPage() {
             </motion.div>
           </AnimatePresence>
 
-          <div className="flex items-center justify-between mt-12">
+          <div className="flex items-center justify-between mt-8">
             <button
               onClick={handlePrev}
               disabled={currentStep === 0}

@@ -56,7 +56,7 @@ function SelectChart({ step, responses }: { step: Step; responses: FormResponse[
   const data = Object.entries(counts).map(([name, value]) => ({ name, value }));
 
   return (
-    <div className="stepflow-card p-4">
+    <div className="stepflow-card p-6">
       <h4 className="font-medium text-sm mb-3">{step.title}</h4>
       <ResponsiveContainer width="100%" height={200}>
         <BarChart data={data}>
@@ -84,7 +84,7 @@ function YesNoChart({ step, responses }: { step: Step; responses: FormResponse[]
   ];
 
   return (
-    <div className="stepflow-card p-4">
+    <div className="stepflow-card p-6">
       <h4 className="font-medium text-sm mb-3">{step.title}</h4>
       <ResponsiveContainer width="100%" height={200}>
         <PieChart>
@@ -126,7 +126,7 @@ function RatingChart({ step, responses }: { step: Step; responses: FormResponse[
   }
 
   return (
-    <div className="stepflow-card p-4">
+    <div className="stepflow-card p-6">
       <h4 className="font-medium text-sm mb-3">{step.title}</h4>
       <ResponsiveContainer width="100%" height={200}>
         <BarChart data={data}>
