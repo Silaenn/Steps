@@ -7,13 +7,11 @@ import { EmptyState } from "./EmptyState";
 export function DashboardPage() {
   const navigate = useNavigate();
   const forms = useFormStore((s) => s.forms);
-  const createForm = useFormStore((s) => s.createForm);
   const deleteForm = useFormStore((s) => s.deleteForm);
   const duplicateForm = useFormStore((s) => s.duplicateForm);
 
   const handleCreate = () => {
-    const id = createForm();
-    navigate(`/builder/${id}`);
+    navigate("/builder/new");
   };
 
   const handleDelete = (id: string) => {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
 import { useFormStore } from "../../core/store";
@@ -35,12 +35,22 @@ export function BuilderPage() {
   const navigate = useNavigate();
   const form = useFormStore((s) => s.forms.find((f) => f.id === id));
   const updateForm = useFormStore((s) => s.updateForm);
+  const createForm = useFormStore((s) => s.createForm);
   const addStep = useFormStore((s) => s.addStep);
   const updateStep = useFormStore((s) => s.updateStep);
   const removeStep = useFormStore((s) => s.removeStep);
   const reorderSteps = useFormStore((s) => s.reorderSteps);
 
   const [selectedStepId, setSelectedStepId] = useState<string | null>(null);
+  const created = useRef(false);
+
+  useEffect(() => {
+    if (id === "new" && !created.current) {
+      created.current = true;
+      const newId = createForm();
+      navigate(`/builder/${newId}`, { replace: true });
+    }
+  }, [id, createForm, navigate]);
 
   if (!form) {
     return (
