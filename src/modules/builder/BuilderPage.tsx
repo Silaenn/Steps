@@ -6,6 +6,7 @@ import type { Step, StepType } from "../../core/types";
 import { Button } from "../shared/ui/Button";
 import { StepList } from "./StepList";
 import { StepConfigByType } from "./StepConfigByType";
+import { ChevronLeft, Play } from "lucide-react";
 
 function createDefaultStep(type: StepType): Step {
   const base = {
@@ -91,13 +92,11 @@ export function BuilderPage() {
         onRemove={handleRemoveStep}
       />
 
-      <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col">
         <div className="p-4 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between bg-white dark:bg-gray-950">
           <div className="flex items-center gap-4">
             <Button variant="ghost" onClick={() => navigate("/")}>
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
+              <ChevronLeft className="w-4 h-4" />
               Back
             </Button>
             <input
@@ -107,20 +106,10 @@ export function BuilderPage() {
               placeholder="Form Title"
             />
           </div>
-          <div className="flex items-center gap-2">
-            <Button variant="secondary" onClick={() => navigate(`/runner/${form.id}`)}>
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-              </svg>
-              Preview
-            </Button>
-            <Button variant="primary" onClick={() => navigate(`/runner/${form.id}`)}>
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-              Run Form
-            </Button>
-          </div>
+          <Button variant="primary" onClick={() => navigate(`/runner/${form.id}`)}>
+            <Play className="w-4 h-4" />
+            Run Form
+          </Button>
         </div>
 
         <div className="flex-1 overflow-y-auto p-6">
@@ -136,9 +125,21 @@ export function BuilderPage() {
               </div>
             </div>
           ) : (
-            <div className="max-w-2xl mx-auto space-y-6 animate-fade-in">
+            <div className="max-w-2xl mx-auto pt-10 animate-fade-in">
               <div className="stepflow-card p-6 space-y-4">
-                <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Step Configuration</h2>
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[var(--primary)]/10 text-[var(--primary)] text-sm font-semibold">
+                    {form.steps.indexOf(selectedStep) + 1}
+                  </div>
+                  <div>
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      {selectedStep.type}
+                    </h2>
+                    <p className="text-xs text-gray-500 capitalize">{selectedStep.type} step</p>
+                  </div>
+                </div>
+
+                <hr className="border-gray-200 dark:border-gray-700" />
 
                 <div>
                   <label className="block text-sm font-medium mb-1">Title</label>
@@ -167,19 +168,21 @@ export function BuilderPage() {
                     id="required"
                     checked={selectedStep.required}
                     onChange={(e) => handleUpdateStep({ required: e.target.checked })}
-                    className="rounded border-gray-300 text-[var(--primary)] focus:ring-[var(--primary)]"
+                    className="rounded border-gray-300 text-[var(--primary)] focus:ring-[var(--primary])"
                   />
                   <label htmlFor="required" className="text-sm font-medium">
                     Required field
                   </label>
                 </div>
-              </div>
 
-              <div className="stepflow-card p-6 space-y-4">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-                  {selectedStep.type} settings
-                </h3>
-                <StepConfigByType step={selectedStep} onChange={handleUpdateStep} />
+                <hr className="border-gray-200 dark:border-gray-700" />
+
+                <div>
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-4">
+                    {selectedStep.type} settings
+                  </h3>
+                  <StepConfigByType step={selectedStep} onChange={handleUpdateStep} />
+                </div>
               </div>
             </div>
           )}
