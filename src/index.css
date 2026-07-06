@@ -5,6 +5,12 @@
 @layer base {
   :root {
     --primary: #C75B39;
+    --chart-1: #C75B39;
+    --chart-2: #2D5A4B;
+    --chart-3: #E8B84B;
+    --chart-4: #D4845E;
+    --chart-5: #3A7C6A;
+    --chart-6: #1A1A1A;
     --fs-h1: 1.75rem;
     --fs-h2: 1.5rem;
     --fs-h3: 1.25rem;
@@ -23,7 +29,7 @@
   }
 
   body {
-    @apply bg-[#FAF6F2] text-gray-900 dark:bg-stone-950 dark:text-stone-100 leading-relaxed;
+    @apply bg-surface text-gray-900 dark:bg-stone-950 dark:text-stone-100 leading-relaxed;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -38,7 +44,7 @@
   }
 
   .stepflow-input {
-    @apply w-full rounded-lg border border-gray-300 dark:border-stone-700 bg-white dark:bg-stone-800 px-4 py-2.5 text-sm text-gray-900 dark:text-stone-100 placeholder-gray-400 transition-colors;
+    @apply w-full rounded-lg border border-gray-300 dark:border-stone-700 bg-white dark:bg-stone-800 px-4 py-2.5 text-sm text-gray-900 dark:text-stone-100 placeholder-gray-500 dark:placeholder-stone-400 transition-colors;
   }
 
   .stepflow-input:focus {

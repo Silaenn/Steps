@@ -28,7 +28,7 @@ export function ResponsesPage() {
       <div className="flex items-center gap-4 mb-8">
         <Link
           to={'/'}
-          className="p-2 -ml-2 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-stone-300 hover:bg-gray-100 dark:hover:bg-stone-800 transition-colors"
+          className="p-2 -ml-2 rounded-lg text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 hover:bg-gray-100 dark:hover:bg-stone-800 transition-colors"
         >
           <ChevronLeft className="w-5 h-5" />
         </Link>

@@ -99,7 +99,7 @@ export function BuilderPage() {
                 placeholder="Form Title"
               />
               <input
-                className="w-full text-sm text-gray-500 dark:text-stone-400 bg-transparent border-none outline-none focus:ring-0 placeholder-gray-400"
+                className="w-full text-sm text-gray-500 dark:text-stone-400 bg-transparent border-none outline-none focus:ring-0 placeholder-gray-500 dark:placeholder-stone-400"
                 value={form.description}
                 onChange={(e) => updateForm(form.id, { description: e.target.value })}
                 placeholder="Form description (optional)"
@@ -167,7 +167,7 @@ export function BuilderPage() {
           </div>
           <div className="flex-1 overflow-y-auto p-6">
           {!selectedStep ? (
-            <div className="flex items-center justify-center h-full text-gray-400">
+            <div className="flex items-center justify-center h-full text-gray-500 dark:text-stone-400">
               <div className="text-center">
                 <div className="w-16 h-16 rounded-lg bg-gray-100 dark:bg-stone-800 flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -188,7 +188,7 @@ export function BuilderPage() {
                     <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
                       {selectedStep.type}
                     </h2>
-                    <p className="text-xs text-gray-500 capitalize">{selectedStep.type} step</p>
+                    <p className="text-xs text-gray-500 dark:text-stone-400 capitalize">{selectedStep.type} step</p>
                   </div>
                 </div>
 

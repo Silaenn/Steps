@@ -4,6 +4,12 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        surface: "#FAF6F2",
+        primary: {
+          DEFAULT: "#C75B39",
+        },
+      },
       fontFamily: {
         sans: ["Outfit", "system-ui", "sans-serif"],
         heading: ["Space Grotesk", "Outfit", "system-ui", "sans-serif"],

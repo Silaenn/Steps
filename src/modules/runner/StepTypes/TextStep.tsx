@@ -13,7 +13,7 @@ export function TextStepRenderer({ step, value, error, onChange }: StepInputProp
       />
       {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
       {"maxLength" in step && step.maxLength && (
-        <p className="mt-1 text-xs text-gray-400">
+        <p className="mt-1 text-xs text-gray-500 dark:text-stone-400">
           {String(value || "").length}/{step.maxLength}
         </p>
       )}

@@ -55,7 +55,7 @@ export function SortableStepItem({ step, index, isSelected, onSelect, onRemove }
       onClick={() => onSelect(step.id)}
     >
       <button
-        className="cursor-grab active:cursor-grabbing text-gray-400 hover:text-gray-600 dark:hover:text-stone-300 touch-none"
+        className="cursor-grab active:cursor-grabbing text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 touch-none"
         {...attributes}
         {...listeners}
       >
@@ -70,12 +70,12 @@ export function SortableStepItem({ step, index, isSelected, onSelect, onRemove }
 
       <div className="flex-1 min-w-0">
         <p className="truncate font-medium">{step.title || `Step ${index + 1}`}</p>
-        <p className="text-xs text-gray-400 truncate">{step.type}</p>
+        <p className="text-xs text-gray-500 dark:text-stone-400 truncate">{step.type}</p>
       </div>
 
       <button
         onClick={(e) => { e.stopPropagation(); onRemove(step.id); }}
-        className="text-gray-300 dark:text-stone-600 hover:text-red-500 transition-colors"
+        className="text-gray-500 dark:text-stone-500 hover:text-red-500 transition-colors"
       >
         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

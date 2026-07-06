@@ -101,7 +101,7 @@ export function RunnerPage() {
             Submit Another Response
           </button>
           <div className="mt-4">
-            <Link to="/" className="text-sm text-gray-400 hover:text-gray-600 dark:hover:text-stone-300 transition-colors">
+            <Link to="/" className="text-sm text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 transition-colors">
               Back to Dashboard
             </Link>
           </div>
@@ -130,13 +130,13 @@ export function RunnerPage() {
       <div className="flex items-center gap-4 px-6 py-4 border-b border-gray-200 dark:border-stone-800 bg-white dark:bg-stone-950">
         <Link
           to={`/builder/${id}`}
-          className="p-2 -ml-2 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-stone-300 hover:bg-gray-100 dark:hover:bg-stone-800 transition-colors"
+          className="p-2 -ml-2 rounded-lg text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 hover:bg-gray-100 dark:hover:bg-stone-800 transition-colors"
         >
           <ChevronLeft className="w-5 h-5" />
         </Link>
         <div>
           <h1 className="text-base font-semibold text-gray-900 dark:text-white">{form.title}</h1>
-          <p className="text-xs text-gray-500 mt-0.5">Step {currentStep + 1} of {form.steps.length}</p>
+          <p className="text-xs text-gray-500 dark:text-stone-400 mt-0.5">Step {currentStep + 1} of {form.steps.length}</p>
         </div>
       </div>
 

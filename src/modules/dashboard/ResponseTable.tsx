@@ -66,26 +66,26 @@ export function ResponseTable({ form, responses }: ResponseTableProps) {
           <tbody>
             {responses.map((response, idx) => (
               <tr key={response.id} className="border-t border-gray-100 dark:border-stone-800 hover:bg-gray-50 dark:hover:bg-stone-900/50">
-                <td className="px-4 py-3 text-gray-500">{idx + 1}</td>
+                <td className="px-4 py-3 text-gray-500 dark:text-stone-400">{idx + 1}</td>
                 {form.steps.map((step) => {
                   const answer = response.answers[step.id];
                   return (
                     <td key={step.id} className="px-4 py-3 text-gray-900 dark:text-stone-100">
                       {answer === undefined || answer === ""
-                        ? <span className="text-gray-400 italic">-</span>
+                        ? <span className="text-gray-500 dark:text-stone-400 italic">-</span>
                         : Array.isArray(answer)
                           ? answer.join(", ")
                           : String(answer)}
                     </td>
                   );
                 })}
-                <td className="px-4 py-3 text-gray-500 text-xs">
+                <td className="px-4 py-3 text-gray-500 dark:text-stone-400 text-xs">
                   {new Date(response.completedAt).toLocaleDateString()}
                 </td>
                 <td className="px-4 py-3">
                   <button
                     onClick={() => setConfirmResponseId(response.id)}
-                    className="p-1.5 rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
+                    className="p-1.5 rounded-lg text-gray-500 hover:text-red-500 dark:text-stone-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
                     title="Delete response"
                   >
                     <Trash2 className="w-4 h-4" />

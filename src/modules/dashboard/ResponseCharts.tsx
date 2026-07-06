@@ -13,7 +13,14 @@ import {
 import type { Form, FormResponse, Step } from "../../core/types";
 import { Star } from "lucide-react";
 
-const COLORS = ["#C75B39", "#2D5A4B", "#E8B84B", "#D4845E", "#3A7C6A", "#1A1A1A"];
+const COLORS = [
+  "var(--chart-1)",
+  "var(--chart-2)",
+  "var(--chart-3)",
+  "var(--chart-4)",
+  "var(--chart-5)",
+  "var(--chart-6)",
+];
 
 interface ResponseChartsProps {
   form: Form;
@@ -56,7 +63,7 @@ function SelectChart({ step, responses }: { step: Step; responses: FormResponse[
           <XAxis dataKey="name" tick={{ fontSize: 12 }} />
           <YAxis tick={{ fontSize: 12 }} />
           <Tooltip />
-          <Bar dataKey="value" fill="#C75B39" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="value" fill="var(--chart-1)" radius={[4, 4, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </div>
@@ -109,7 +116,7 @@ function RatingChart({ step, responses }: { step: Step; responses: FormResponse[
     return (
       <g transform={`translate(${x},${y})`}>
         <foreignObject x={-14} y={-10} width={28} height={20}>
-          <div className="flex items-center justify-center gap-0.5 text-xs text-gray-400">
+          <div className="flex items-center justify-center gap-0.5 text-xs text-gray-500 dark:text-stone-400">
             <Star size={10} strokeWidth={1.5} />
             <span>{payload.value}</span>
           </div>
@@ -126,7 +133,7 @@ function RatingChart({ step, responses }: { step: Step; responses: FormResponse[
           <XAxis dataKey="name" tick={<RatingTick />} />
           <YAxis tick={{ fontSize: 12 }} />
           <Tooltip />
-          <Bar dataKey="value" fill="#2D5A4B" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="value" fill="var(--chart-2)" radius={[4, 4, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </div>
