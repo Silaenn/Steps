@@ -26,7 +26,7 @@ export function MultiSelectStepRenderer({ step, value, error, onChange }: StepIn
                 "w-full text-left px-5 py-4 rounded-xl border-2 text-base font-medium transition-all flex items-center gap-3",
                 isSelected
                   ? "border-[var(--primary)] bg-[var(--primary)]/5 text-gray-900 dark:text-white"
-                  : "border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-600",
+                  : "border-gray-200 dark:border-stone-700 text-gray-600 dark:text-stone-400 hover:border-gray-300 dark:hover:border-stone-600",
               )}
             >
               <div
@@ -34,7 +34,7 @@ export function MultiSelectStepRenderer({ step, value, error, onChange }: StepIn
                   "w-5 h-5 rounded border-2 flex items-center justify-center transition-colors",
                   isSelected
                     ? "bg-[var(--primary)] border-[var(--primary)]"
-                    : "border-gray-300 dark:border-gray-600",
+                    : "border-gray-300 dark:border-stone-600",
                 )}
               >
                 {isSelected && (

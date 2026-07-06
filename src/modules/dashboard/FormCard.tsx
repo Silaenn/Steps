@@ -22,14 +22,14 @@ export function FormCard({ form, onDelete, onDuplicate }: FormCardProps) {
             {form.title}
           </h3>
           {form.description && (
-            <p className="text-sm text-gray-500 dark:text-gray-400 truncate mt-0.5">
+            <p className="text-sm text-gray-500 dark:text-stone-400 truncate mt-0.5">
               {form.description}
             </p>
           )}
         </div>
       </div>
 
-      <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400 mb-4">
+      <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-stone-400 mb-4">
         <span>{form.steps.length} steps</span>
         <span>·</span>
         <span>{form.responseCount} responses</span>

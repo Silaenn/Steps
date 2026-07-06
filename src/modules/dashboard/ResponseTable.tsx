@@ -12,7 +12,7 @@ interface ResponseTableProps {
 export function ResponseTable({ form, responses }: ResponseTableProps) {
   if (responses.length === 0) {
     return (
-      <div className="flex-1 text-center text-gray-500 dark:text-gray-400 pt-36">
+      <div className="flex-1 text-center text-gray-500 dark:text-stone-400 pt-36">
         <p className="text-lg font-medium mb-1">No responses yet</p>
         <p className="text-sm">Share your form to start collecting responses.</p>
       </div>
@@ -24,7 +24,7 @@ export function ResponseTable({ form, responses }: ResponseTableProps) {
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
-        <p className="text-sm text-gray-500 dark:text-gray-400">
+        <p className="text-sm text-gray-500 dark:text-stone-400">
           {responses.length} response{responses.length !== 1 && "s"}
         </p>
         <div className="flex gap-2">
@@ -45,28 +45,28 @@ export function ResponseTable({ form, responses }: ResponseTableProps) {
         </div>
       </div>
 
-      <div className="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-800">
+      <div className="overflow-x-auto rounded-lg border border-gray-200 dark:border-stone-800">
         <table className="w-full text-sm">
           <thead>
-            <tr className="bg-gray-50 dark:bg-gray-900">
-              <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">#</th>
+            <tr className="bg-gray-50 dark:bg-stone-900">
+              <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-stone-400">#</th>
               {form.steps.map((step, i) => (
-                <th key={step.id} className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">
+                <th key={step.id} className="text-left px-4 py-3 font-medium text-gray-500 dark:text-stone-400">
                   {step.title || `Step ${i + 1}`}
                 </th>
               ))}
-              <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Date</th>
-              <th className="w-16 px-4 py-3 font-medium text-gray-500 dark:text-gray-400"></th>
+              <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-stone-400">Date</th>
+              <th className="w-16 px-4 py-3 font-medium text-gray-500 dark:text-stone-400"></th>
             </tr>
           </thead>
           <tbody>
             {responses.map((response, idx) => (
-              <tr key={response.id} className="border-t border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900/50">
+              <tr key={response.id} className="border-t border-gray-100 dark:border-stone-800 hover:bg-gray-50 dark:hover:bg-stone-900/50">
                 <td className="px-4 py-3 text-gray-500">{idx + 1}</td>
                 {form.steps.map((step) => {
                   const answer = response.answers[step.id];
                   return (
-                    <td key={step.id} className="px-4 py-3 text-gray-900 dark:text-gray-100">
+                    <td key={step.id} className="px-4 py-3 text-gray-900 dark:text-stone-100">
                       {answer === undefined || answer === ""
                         ? <span className="text-gray-400 italic">-</span>
                         : Array.isArray(answer)

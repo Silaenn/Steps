@@ -11,7 +11,7 @@ export function InfoStepRenderer({ step }: StepInputProps) {
         />
       )}
       {step.description && (
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-md mx-auto">
+        <p className="text-lg text-gray-600 dark:text-stone-300 max-w-md mx-auto">
           {step.description}
         </p>
       )}

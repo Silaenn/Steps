@@ -33,7 +33,7 @@ export function DashboardPage() {
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">My Forms</h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+          <p className="text-sm text-gray-500 dark:text-stone-400 mt-1">
             {forms.length} form{forms.length !== 1 && "s"} total
           </p>
         </div>

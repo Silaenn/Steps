@@ -93,7 +93,7 @@ export function RunnerPage() {
             <CheckCircle className="w-10 h-10 text-green-500" />
           </div>
           <h2 className="text-2xl font-bold mb-2">Response Submitted!</h2>
-          <p className="text-gray-500 dark:text-gray-400 mb-8">Thank you for completing the form.</p>
+          <p className="text-gray-500 dark:text-stone-400 mb-8">Thank you for completing the form.</p>
           <button
             onClick={() => { setCurrentStep(0); setAnswers({}); setErrors({}); setCompleted(false); }}
             className="px-6 py-3 bg-[var(--primary)] text-white rounded-lg font-medium hover:brightness-110 transition-all"
@@ -101,7 +101,7 @@ export function RunnerPage() {
             Submit Another Response
           </button>
           <div className="mt-4">
-            <Link to="/" className="text-sm text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+            <Link to="/" className="text-sm text-gray-400 hover:text-gray-600 dark:hover:text-stone-300 transition-colors">
               Back to Dashboard
             </Link>
           </div>
@@ -118,7 +118,7 @@ export function RunnerPage() {
 
   return (
     <div className="flex-1 flex flex-col">
-      <div className="w-full bg-gray-100 dark:bg-gray-800 h-1.5">
+      <div className="w-full bg-gray-100 dark:bg-stone-800 h-1.5">
         <motion.div
           className="h-full bg-[var(--primary)]"
           initial={false}
@@ -127,10 +127,10 @@ export function RunnerPage() {
         />
       </div>
 
-      <div className="flex items-center gap-4 px-6 py-4 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+      <div className="flex items-center gap-4 px-6 py-4 border-b border-gray-200 dark:border-stone-800 bg-white dark:bg-stone-950">
         <Link
           to={`/builder/${id}`}
-          className="p-2 -ml-2 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          className="p-2 -ml-2 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-stone-300 hover:bg-gray-100 dark:hover:bg-stone-800 transition-colors"
         >
           <ChevronLeft className="w-5 h-5" />
         </Link>
@@ -152,7 +152,7 @@ export function RunnerPage() {
                     ? "bg-[var(--primary)] scale-125"
                     : i < currentStep
                       ? "bg-[var(--primary)]/30 dark:bg-[var(--primary)]/50"
-                      : "bg-gray-200 dark:bg-gray-700",
+                      : "bg-gray-200 dark:bg-stone-700",
                 )}
               />
             ))}
@@ -175,7 +175,7 @@ export function RunnerPage() {
                       {step.title || `Step ${currentStep + 1}`}
                     </h2>
                     {step.description && (
-                      <p className="text-gray-500 dark:text-gray-400">
+                      <p className="text-gray-500 dark:text-stone-400">
                         {step.description}
                       </p>
                     )}
@@ -196,7 +196,7 @@ export function RunnerPage() {
             <button
               onClick={handlePrev}
               disabled={currentStep === 0}
-              className="inline-flex items-center gap-1.5 px-5 py-2.5 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 disabled:opacity-30 disabled:pointer-events-none transition-colors"
+              className="inline-flex items-center gap-1.5 px-5 py-2.5 text-sm font-medium text-gray-500 dark:text-stone-400 hover:text-gray-700 dark:hover:text-stone-200 disabled:opacity-30 disabled:pointer-events-none transition-colors"
             >
               <ChevronLeft className="w-4 h-4" />
               Previous

@@ -15,7 +15,7 @@ export function EmptyState({ onCreateForm }: EmptyStateProps) {
       <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
         No forms yet
       </h3>
-      <p className="text-gray-500 dark:text-gray-400 text-center max-w-sm mb-8">
+      <p className="text-gray-500 dark:text-stone-400 text-center max-w-sm mb-8">
         Create your first multi-step form to start collecting responses.
       </p>
       <Button onClick={onCreateForm} size="lg">

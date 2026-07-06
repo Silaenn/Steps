@@ -10,7 +10,7 @@ interface BadgeProps {
 }
 
 const badgeVariants: Record<BadgeVariant, string> = {
-  default: "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300",
+  default: "bg-gray-100 text-gray-700 dark:bg-stone-800 dark:text-stone-300",
   primary: "bg-[var(--primary)]/10 text-[var(--primary)] dark:bg-[var(--primary)]/20 dark:text-[var(--primary)]/90",
   success: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300",
   warning: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300",

@@ -61,11 +61,11 @@ export function StepList({ steps, selectedId, onSelect, onReorder, onAdd, onRemo
   );
 
   return (
-    <div className="w-72 border-r border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50 flex flex-col">
+    <div className="w-72 border-r border-gray-200 dark:border-stone-800 bg-gray-50 dark:bg-stone-900/50 flex flex-col">
       <div className="flex-1 overflow-y-auto p-2">
         {steps.length === 0 && (
           <div className="flex flex-col items-center justify-center h-full text-sm text-gray-400 text-center px-2">
-            <div className="w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-2">
+            <div className="w-10 h-10 rounded-lg bg-gray-100 dark:bg-stone-800 flex items-center justify-center mb-2">
               <Layers className="w-5 h-5" />
             </div>
             <p>No steps yet</p>
@@ -92,7 +92,7 @@ export function StepList({ steps, selectedId, onSelect, onReorder, onAdd, onRemo
       <div className="relative p-2">
         <button
           onClick={() => setShowAddMenu(!showAddMenu)}
-          className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 text-sm text-gray-500 dark:text-gray-400 hover:border-gray-400 dark:hover:border-gray-500 hover:text-gray-700 dark:hover:text-gray-200 transition-all"
+          className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg border-2 border-dashed border-gray-300 dark:border-stone-600 text-sm text-gray-500 dark:text-stone-400 hover:border-gray-400 dark:hover:border-stone-500 hover:text-gray-700 dark:hover:text-stone-200 transition-all"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -102,12 +102,12 @@ export function StepList({ steps, selectedId, onSelect, onReorder, onAdd, onRemo
         {showAddMenu && (
           <>
             <div className="fixed inset-0 z-10" onClick={() => setShowAddMenu(false)} />
-            <div className="absolute bottom-full left-0 right-0 mb-1 z-20 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-2 max-h-64 overflow-y-auto">
+            <div className="absolute bottom-full left-0 right-0 mb-1 z-20 bg-white dark:bg-stone-800 rounded-lg border border-gray-200 dark:border-stone-700 p-2 max-h-64 overflow-y-auto">
               {STEP_TYPES.map(({ type, label, icon }) => (
                 <button
                   key={type}
                   onClick={() => { onAdd(type); setShowAddMenu(false); }}
-                  className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-left"
+                  className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-stone-700 transition-colors text-left"
                 >
                   <span className="inline-flex items-center justify-center w-5 h-5 shrink-0">
                     {icon}

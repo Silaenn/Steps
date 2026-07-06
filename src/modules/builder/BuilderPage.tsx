@@ -83,7 +83,7 @@ export function BuilderPage() {
 
   return (
     <div className="flex flex-col flex-1">
-      <div className="p-4 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shrink-0">
+      <div className="p-4 border-b border-gray-200 dark:border-stone-800 bg-white dark:bg-stone-950 shrink-0">
           <div className="flex items-center gap-4">
             <Button variant="ghost" onClick={() => navigate("/")} className="shrink-0">
               <ChevronLeft className="w-4 h-4" />
@@ -97,7 +97,7 @@ export function BuilderPage() {
                 placeholder="Form Title"
               />
               <input
-                className="w-full text-sm text-gray-500 dark:text-gray-400 bg-transparent border-none outline-none focus:ring-0 placeholder-gray-400"
+                className="w-full text-sm text-gray-500 dark:text-stone-400 bg-transparent border-none outline-none focus:ring-0 placeholder-gray-400"
                 value={form.description}
                 onChange={(e) => updateForm(form.id, { description: e.target.value })}
                 placeholder="Form description (optional)"
@@ -123,7 +123,7 @@ export function BuilderPage() {
           {!selectedStep ? (
             <div className="flex items-center justify-center h-full text-gray-400">
               <div className="text-center">
-                <div className="w-16 h-16 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-lg bg-gray-100 dark:bg-stone-800 flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -146,7 +146,7 @@ export function BuilderPage() {
                   </div>
                 </div>
 
-                <hr className="border-gray-200 dark:border-gray-700" />
+                <hr className="border-gray-200 dark:border-stone-700" />
 
                 <div>
                   <label className="block text-sm font-medium mb-1">Title</label>
@@ -182,10 +182,10 @@ export function BuilderPage() {
                   </label>
                 </div>
 
-                <hr className="border-gray-200 dark:border-gray-700" />
+                <hr className="border-gray-200 dark:border-stone-700" />
 
                 <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-4">
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-stone-400 mb-4">
                     {selectedStep.type} settings
                   </h3>
                   <StepConfigByType step={selectedStep} onChange={handleUpdateStep} />

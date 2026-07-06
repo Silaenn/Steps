@@ -49,13 +49,13 @@ export function SortableStepItem({ step, index, isSelected, onSelect, onRemove }
         "flex items-center gap-2 px-3 py-2.5 rounded-lg cursor-pointer border text-sm transition-all",
         isSelected
           ? "bg-[var(--primary)]/10 border-[var(--primary)]/30 text-gray-900 dark:text-white"
-          : "bg-white dark:bg-gray-800 border-transparent text-gray-700 dark:text-gray-300 hover:border-gray-200 dark:hover:border-gray-700",
+          : "bg-white dark:bg-stone-800 border-transparent text-gray-700 dark:text-stone-300 hover:border-gray-200 dark:hover:border-stone-700",
         isDragging && "opacity-50",
       )}
       onClick={() => onSelect(step.id)}
     >
       <button
-        className="cursor-grab active:cursor-grabbing text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 touch-none"
+        className="cursor-grab active:cursor-grabbing text-gray-400 hover:text-gray-600 dark:hover:text-stone-300 touch-none"
         {...attributes}
         {...listeners}
       >
@@ -75,7 +75,7 @@ export function SortableStepItem({ step, index, isSelected, onSelect, onRemove }
 
       <button
         onClick={(e) => { e.stopPropagation(); onRemove(step.id); }}
-        className="text-gray-300 dark:text-gray-600 hover:text-red-500 transition-colors"
+        className="text-gray-300 dark:text-stone-600 hover:text-red-500 transition-colors"
       >
         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
