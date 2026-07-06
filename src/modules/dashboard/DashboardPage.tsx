@@ -23,7 +23,11 @@ export function DashboardPage() {
   };
 
   if (forms.length === 0) {
-    return <EmptyState onCreateForm={handleCreate} />;
+    return (
+      <div className="flex-1 flex flex-col">
+        <EmptyState onCreateForm={handleCreate} />
+      </div>
+    );
   }
 
   return (
