@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="https://raw.githubusercontent.com/Silaenn/Steps/main/public/logo.png" alt="StepFlow logo" width="64" height="64">
+
 # StepFlow
 
 **A modern multi-step form builder that puts you in control.**
