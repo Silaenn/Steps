@@ -3,7 +3,7 @@ import { Card } from "../shared/ui/Card";
 import { Button } from "../shared/ui/Button";
 import type { Form } from "../../core/types";
 import { formatDistanceToNow } from "date-fns";
-import { Play, Copy, Trash2 } from "lucide-react";
+import { Play, Copy, Trash2, BarChart3 } from "lucide-react";
 
 interface FormCardProps {
   form: Form;
@@ -41,10 +41,17 @@ export function FormCard({ form, onDelete, onDuplicate }: FormCardProps) {
         <Button
           size="sm"
           variant="secondary"
+          onClick={() => navigate(`/responses/${form.id}`)}
+        >
+          <BarChart3 className="w-4 h-4" />
+          {form.responseCount}
+        </Button>
+        <Button
+          size="sm"
+          variant="ghost"
           onClick={() => navigate(`/runner/${form.id}`)}
         >
           <Play className="w-4 h-4" />
-          Preview
         </Button>
         <Button
           size="sm"
