@@ -15,6 +15,7 @@ import {
 } from "@dnd-kit/sortable";
 import type { Step, StepType } from "../../core/types";
 import { SortableStepItem } from "./SortableStepItem";
+import { motion, AnimatePresence } from "framer-motion";
 import { Info, FileText, Mail, Hash, File, List, CheckSquare, Star, Calendar, Phone, CheckCircle, Layers } from "lucide-react";
 
 interface StepListProps {
@@ -102,7 +103,18 @@ export function StepList({ steps, selectedId, onSelect, onReorder, onAdd, onRemo
         {showAddMenu && (
           <>
             <div className="fixed inset-0 z-10" onClick={() => setShowAddMenu(false)} />
-            <div className="absolute bottom-full left-0 right-0 mb-1 z-20 bg-white dark:bg-stone-800 rounded-lg border border-gray-200 dark:border-stone-700 p-2 max-h-64 overflow-y-auto">
+          </>
+        )}
+        <AnimatePresence>
+          {showAddMenu && (
+            <motion.div
+              key="step-types-menu"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ type: 'tween', duration: 0.15, ease: 'easeOut' }}
+              className="absolute bottom-full left-0 right-0 mb-1 z-20 bg-white dark:bg-stone-800 rounded-lg border border-gray-200 dark:border-stone-700 p-2 max-h-64 overflow-y-auto"
+            >
               {STEP_TYPES.map(({ type, label, icon }) => (
                 <button
                   key={type}
@@ -115,9 +127,9 @@ export function StepList({ steps, selectedId, onSelect, onReorder, onAdd, onRemo
                   <span>{label}</span>
                 </button>
               ))}
-            </div>
-          </>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

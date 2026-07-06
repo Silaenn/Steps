@@ -1,60 +1,76 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useFormStore } from "../../core/store";
 import { Button } from "../shared/ui/Button";
 import { FormCard } from "./FormCard";
 import { EmptyState } from "./EmptyState";
+import { ConfirmModal } from "../shared/ui/ConfirmModal";
 
 export function DashboardPage() {
   const navigate = useNavigate();
   const forms = useFormStore((s) => s.forms);
   const deleteForm = useFormStore((s) => s.deleteForm);
   const duplicateForm = useFormStore((s) => s.duplicateForm);
+  const [deleteTarget, setDeleteTarget] = useState<string | null>(null);
 
   const handleCreate = () => {
     navigate("/builder/new");
   };
 
   const handleDelete = (id: string) => {
-    if (window.confirm("Delete this form and all its responses?")) {
-      deleteForm(id);
-    }
+    setDeleteTarget(id);
   };
 
-  if (forms.length === 0) {
-    return (
-      <div className="flex-1 flex flex-col">
-        <EmptyState onCreateForm={handleCreate} />
-      </div>
-    );
-  }
-
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">My Forms</h1>
-          <p className="text-sm text-gray-500 dark:text-stone-400 mt-1">
-            {forms.length} form{forms.length !== 1 && "s"} total
-          </p>
-        </div>
-        <Button onClick={handleCreate} size="lg">
-          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-          </svg>
-          Create Form
-        </Button>
-      </div>
+    <>
+      <ConfirmModal
+        open={deleteTarget !== null}
+        onClose={() => setDeleteTarget(null)}
+        onConfirm={() => { if (deleteTarget) deleteForm(deleteTarget); }}
+        title="Delete Form"
+        message="Are you sure you want to delete this form and all its responses?"
+        confirmLabel="Delete"
+        variant="danger"
+      />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {forms.map((form) => (
-          <FormCard
-            key={form.id}
-            form={form}
-            onDelete={handleDelete}
-            onDuplicate={duplicateForm}
-          />
-        ))}
-      </div>
-    </div>
+      {forms.length === 0 ? (
+        <div className="flex-1 flex flex-col">
+          <EmptyState onCreateForm={handleCreate} />
+        </div>
+      ) : (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">My Forms</h1>
+              <p className="text-sm text-gray-500 dark:text-stone-400 mt-1">
+                {forms.length} form{forms.length !== 1 && "s"} total
+              </p>
+            </div>
+            <Button onClick={handleCreate} size="lg">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+              </svg>
+              Create Form
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {forms.map((form, index) => (
+              <div
+                key={form.id}
+                className="animate-fade-in animate-slide-up"
+                style={{ animationDelay: `${index * 80}ms`, animationFillMode: 'backwards' }}
+              >
+                <FormCard
+                  form={form}
+                  onDelete={handleDelete}
+                  onDuplicate={duplicateForm}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </>
   );
 }

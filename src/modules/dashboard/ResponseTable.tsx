@@ -1,6 +1,8 @@
+import { useState } from "react";
 import type { FormResponse, Form } from "../../core/types";
 import { useFormStore } from "../../core/store";
 import { Button } from "../shared/ui/Button";
+import { ConfirmModal } from "../shared/ui/ConfirmModal";
 import { exportResponsesToCSV, exportResponsesToJSON } from "../../core/utils/export";
 import { Trash2 } from "lucide-react";
 
@@ -10,6 +12,8 @@ interface ResponseTableProps {
 }
 
 export function ResponseTable({ form, responses }: ResponseTableProps) {
+  const [confirmResponseId, setConfirmResponseId] = useState<string | null>(null);
+
   if (responses.length === 0) {
     return (
       <div className="flex-1 text-center text-gray-500 dark:text-stone-400 pt-36">
@@ -80,11 +84,7 @@ export function ResponseTable({ form, responses }: ResponseTableProps) {
                 </td>
                 <td className="px-4 py-3">
                   <button
-                    onClick={() => {
-                      if (window.confirm("Delete this response?")) {
-                        useFormStore.getState().deleteResponse(form.id, response.id);
-                      }
-                    }}
+                    onClick={() => setConfirmResponseId(response.id)}
                     className="p-1.5 rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
                     title="Delete response"
                   >
@@ -96,6 +96,20 @@ export function ResponseTable({ form, responses }: ResponseTableProps) {
           </tbody>
         </table>
       </div>
+
+      <ConfirmModal
+        open={confirmResponseId !== null}
+        onClose={() => setConfirmResponseId(null)}
+        onConfirm={() => {
+          if (confirmResponseId) {
+            useFormStore.getState().deleteResponse(form.id, confirmResponseId);
+          }
+        }}
+        title="Delete Response"
+        message="Are you sure you want to delete this response?"
+        confirmLabel="Delete"
+        variant="danger"
+      />
     </div>
   );
 }

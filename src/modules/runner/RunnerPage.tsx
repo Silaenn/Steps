@@ -151,7 +151,7 @@ export function RunnerPage() {
                   i === currentStep
                     ? "bg-[var(--primary)] scale-125"
                     : i < currentStep
-                      ? "bg-[var(--primary)]/30 dark:bg-[var(--primary)]/50"
+                      ? "bg-[var(--primary)]"
                       : "bg-gray-200 dark:bg-stone-700",
                 )}
               />
