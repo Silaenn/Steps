@@ -92,7 +92,7 @@ export function RunnerPage() {
           <div className="w-20 h-20 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-4">
             <CheckCircle className="w-10 h-10 text-green-700 dark:text-green-400" />
           </div>
-          <h2 className="text-3xl font-bold mb-4">Response Submitted!</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Response Submitted!</h2>
           <p className="text-gray-500 dark:text-stone-400 mb-8">Thank you for completing the form.</p>
           <button
             onClick={() => { setCurrentStep(0); setAnswers({}); setErrors({}); setCompleted(false); }}
@@ -130,7 +130,7 @@ export function RunnerPage() {
       <div className="flex items-center gap-4 px-4 py-4 border-b border-gray-200 dark:border-stone-800 bg-white dark:bg-stone-950">
         <Link
           to={`/builder/${id}`}
-          className="p-2 -ml-2 rounded-lg text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 hover:bg-gray-100 dark:hover:bg-stone-800 transition-colors"
+          className="p-3 -ml-3 rounded-lg text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 hover:bg-gray-100 dark:hover:bg-stone-800 transition-colors"
         >
           <ChevronLeft className="w-5 h-5" />
         </Link>
@@ -171,7 +171,7 @@ export function RunnerPage() {
               {step && (
                 <div className="space-y-8">
                   <div>
-                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
+                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">
                       {step.title || `Step ${currentStep + 1}`}
                     </h2>
                     {step.description && (

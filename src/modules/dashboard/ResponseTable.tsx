@@ -85,7 +85,7 @@ export function ResponseTable({ form, responses }: ResponseTableProps) {
                 <td className="px-4 py-3">
                   <button
                     onClick={() => setConfirmResponseId(response.id)}
-                    className="p-2 rounded-lg text-gray-500 hover:text-red-500 dark:text-stone-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
+                    className="p-3 rounded-lg text-gray-500 hover:text-red-500 dark:text-stone-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
                     title="Delete response"
                   >
                     <Trash2 className="w-4 h-4" />

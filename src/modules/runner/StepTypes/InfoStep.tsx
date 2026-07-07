@@ -5,9 +5,9 @@ export function InfoStepRenderer({ step }: StepInputProps) {
     <div className="text-center py-8">
       {"imageUrl" in step && step.imageUrl && (
         <img
-          src={step.imageUrl}
+          src={step.imageUrl} loading="lazy"
           alt=""
-          className="w-48 h-48 object-cover rounded-lg mx-auto mb-6"
+          className="w-48 h-48 max-w-full object-cover rounded-lg mx-auto mb-6"
         />
       )}
       {step.description && (
