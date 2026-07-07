@@ -115,7 +115,7 @@ export function BuilderPage() {
         <div className="flex flex-1 overflow-hidden">
           {/* Mobile: floating toggle button */}
           <button
-            className="md:hidden fixed bottom-6 right-6 z-50 w-12 h-12 rounded-lg bg-[var(--primary)] text-white flex items-center justify-center hover:brightness-110 active:brightness-95 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40 transition-all"
+            className="md:hidden fixed bottom-6 right-6 z-50 w-12 h-12 rounded-lg bg-[rgb(var(--primary))] text-white flex items-center justify-center hover:brightness-110 active:brightness-95 focus:outline-none focus:ring-2 focus:ring-[rgb(var(--primary))/0.4] transition-all"
             onClick={() => setMobileStepsOpen(!mobileStepsOpen)}
           >
             <Layers className="w-5 h-5" />
@@ -179,7 +179,7 @@ export function BuilderPage() {
             <div className="max-w-2xl mx-auto pt-10 animate-fade-in">
               <div className="stepflow-card p-6 space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[var(--primary)]/10 text-[var(--primary)] text-sm font-semibold">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[rgb(var(--primary))/0.1] text-[rgb(var(--primary))] text-sm font-semibold">
                     {form.steps.indexOf(selectedStep) + 1}
                   </div>
                   <div>
@@ -219,7 +219,7 @@ export function BuilderPage() {
                     id="required"
                     checked={selectedStep.required}
                     onChange={(e) => handleUpdateStep({ required: e.target.checked })}
-                    className="rounded border-gray-300 text-[var(--primary)] focus:ring-[var(--primary)]"
+                    className="rounded border-gray-300 text-[rgb(var(--primary))] focus:ring-[rgb(var(--primary))]"
                   />
                   <label htmlFor="required" className="text-sm font-medium">
                     Required field

@@ -93,7 +93,7 @@ export function StepList({ steps, selectedId, onSelect, onReorder, onAdd, onRemo
       <div className="relative p-3">
         <button
           onClick={() => setShowAddMenu(!showAddMenu)}
-          className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg border-2 border-dashed border-gray-300 dark:border-stone-600 text-sm text-gray-500 dark:text-stone-400 hover:border-gray-400 dark:hover:border-stone-500 hover:text-gray-700 dark:hover:text-stone-200 transition-all focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40"
+          className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg border-2 border-dashed border-gray-300 dark:border-stone-600 text-sm text-gray-500 dark:text-stone-400 hover:border-gray-400 dark:hover:border-stone-500 hover:text-gray-700 dark:hover:text-stone-200 transition-all focus:outline-none focus:ring-2 focus:ring-[rgb(var(--primary))/0.4]"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -119,7 +119,7 @@ export function StepList({ steps, selectedId, onSelect, onReorder, onAdd, onRemo
                 <button
                   key={type}
                   onClick={() => { onAdd(type); setShowAddMenu(false); }}
-                  className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-stone-700 transition-colors text-left focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40"
+                  className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-stone-700 transition-colors text-left focus:outline-none focus:ring-2 focus:ring-[rgb(var(--primary))/0.4]"
                 >
                   <span className="inline-flex items-center justify-center w-5 h-5 shrink-0">
                     {icon}

@@ -75,7 +75,7 @@ export function RunnerPage() {
       <div className="flex items-center justify-center h-[60vh]">
         <div className="text-center">
           <h2 className="text-2xl font-semibold mb-4">Form not found</h2>
-          <Link to="/" className="text-[var(--primary)] hover:underline focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40 rounded">Back to Dashboard</Link>
+          <Link to="/" className="text-[rgb(var(--primary))] hover:underline focus:outline-none focus:ring-2 focus:ring-[rgb(var(--primary))/0.4] rounded">Back to Dashboard</Link>
         </div>
       </div>
     );
@@ -96,12 +96,12 @@ export function RunnerPage() {
           <p className="text-gray-500 dark:text-stone-400 mb-8">Thank you for completing the form.</p>
           <button
             onClick={() => { setCurrentStep(0); setAnswers({}); setErrors({}); setCompleted(false); }}
-            className="px-6 py-3 bg-[var(--primary)] text-white rounded-lg font-medium hover:brightness-110 transition-all focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40"
+            className="px-6 py-3 bg-[rgb(var(--primary))] text-white rounded-lg font-medium hover:brightness-110 transition-all focus:outline-none focus:ring-2 focus:ring-[rgb(var(--primary))/0.4]"
           >
             Submit Another Response
           </button>
           <div className="mt-4">
-            <Link to="/" className="text-sm text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40 rounded">
+            <Link to="/" className="text-sm text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 transition-colors focus:outline-none focus:ring-2 focus:ring-[rgb(var(--primary))/0.4] rounded">
               Back to Dashboard
             </Link>
           </div>
@@ -120,7 +120,7 @@ export function RunnerPage() {
     <div className="flex-1 flex flex-col">
         <div className="w-full bg-gray-100 dark:bg-stone-800 h-2 overflow-hidden rounded-full">
           <motion.div
-            className="h-full bg-[var(--primary)] w-full origin-left"
+            className="h-full bg-[rgb(var(--primary))] w-full origin-left"
             initial={false}
             animate={{ scaleX: (currentStep + 1) / form.steps.length }}
             transition={{ duration: 0.3 }}
@@ -130,7 +130,7 @@ export function RunnerPage() {
       <div className="flex items-center gap-4 px-4 py-4 border-b border-gray-200 dark:border-stone-800 bg-white dark:bg-stone-950">
         <Link
           to={`/builder/${id}`}
-          className="p-3 -ml-3 rounded-lg text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 hover:bg-gray-100 dark:hover:bg-stone-800 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40"
+          className="p-3 -ml-3 rounded-lg text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 hover:bg-gray-100 dark:hover:bg-stone-800 transition-colors focus:outline-none focus:ring-2 focus:ring-[rgb(var(--primary))/0.4]"
         >
           <ChevronLeft className="w-5 h-5" />
         </Link>
@@ -149,9 +149,9 @@ export function RunnerPage() {
                 className={clsx(
                   "w-3 h-3 rounded-full transition-all duration-300",
                   i === currentStep
-                    ? "bg-[var(--primary)] scale-125"
+                    ? "bg-[rgb(var(--primary))] scale-125"
                     : i < currentStep
-                      ? "bg-[var(--primary)]"
+                      ? "bg-[rgb(var(--primary))]"
                       : "bg-gray-200 dark:bg-stone-700",
                 )}
               />
@@ -196,7 +196,7 @@ export function RunnerPage() {
             <button
               onClick={handlePrev}
               disabled={currentStep === 0}
-              className="inline-flex items-center gap-2 px-4 py-3 text-sm font-medium text-gray-500 dark:text-stone-400 hover:text-gray-700 dark:hover:text-stone-200 disabled:opacity-30 disabled:pointer-events-none transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40 rounded-lg"
+              className="inline-flex items-center gap-2 px-4 py-3 text-sm font-medium text-gray-500 dark:text-stone-400 hover:text-gray-700 dark:hover:text-stone-200 disabled:opacity-30 disabled:pointer-events-none transition-colors focus:outline-none focus:ring-2 focus:ring-[rgb(var(--primary))/0.4] rounded-lg"
             >
               <ChevronLeft className="w-4 h-4" />
               Previous
@@ -204,7 +204,7 @@ export function RunnerPage() {
 
             <button
               onClick={handleNext}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--primary)] text-white rounded-lg text-sm font-medium hover:brightness-110 transition-all focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[rgb(var(--primary))] text-white rounded-lg text-sm font-medium hover:brightness-110 transition-all focus:outline-none focus:ring-2 focus:ring-[rgb(var(--primary))/0.4]"
             >
               {isLastStep ? "Submit" : "Next"}
               {!isLastStep && <ArrowRight className="w-4 h-4" />}

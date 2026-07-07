@@ -6,7 +6,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-gray-200 dark:border-stone-800 bg-white dark:bg-stone-950">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 rounded-lg transition-colors hover:text-gray-700 dark:hover:text-stone-300 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40">
+          <Link to="/" className="flex items-center gap-2 rounded-lg transition-colors hover:text-gray-700 dark:hover:text-stone-300 focus:outline-none focus:ring-2 focus:ring-[rgb(var(--primary))/0.4]">
             <img src="/logo.png" alt="StepFlow" className="w-6 h-6" loading="lazy" />
             <span className="text-base font-bold text-gray-900 dark:text-white">
               StepFlow

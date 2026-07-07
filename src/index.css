@@ -29,7 +29,7 @@
 
 @layer base {
   :root {
-    --primary: #C75B39;
+    --primary: 199 91 57;
     --chart-1: #C75B39;
     --chart-2: #2D5A4B;
     --chart-3: #E8B84B;
@@ -75,6 +75,6 @@
   .stepflow-input:focus {
     outline: 2px solid transparent;
     outline-offset: 2px;
-    border-color: var(--primary);
+    border-color: rgb(var(--primary));
   }
 }

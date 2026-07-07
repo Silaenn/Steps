@@ -45,7 +45,7 @@ export function Modal({ open, onClose, title, children, className }: ModalProps)
               <h2 className="text-lg font-semibold">{title}</h2>
               <button
                 onClick={onClose}
-                className="p-2 rounded-lg text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40"
+                className="p-2 rounded-lg text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 transition-colors focus:outline-none focus:ring-2 focus:ring-[rgb(var(--primary))/0.4]"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

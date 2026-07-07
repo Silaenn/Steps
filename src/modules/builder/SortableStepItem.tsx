@@ -48,14 +48,14 @@ export function SortableStepItem({ step, index, isSelected, onSelect, onRemove }
       className={clsx(
         "flex items-center gap-2 px-3 py-2.5 rounded-lg cursor-pointer border text-sm transition-all",
         isSelected
-          ? "bg-[var(--primary)]/10 border-[var(--primary)]/30 text-gray-900 dark:text-white"
+          ? "bg-[rgb(var(--primary))/0.1] border-[rgb(var(--primary))/0.3] text-gray-900 dark:text-white"
           : "bg-white dark:bg-stone-800 border-transparent text-gray-700 dark:text-stone-300 hover:border-gray-200 dark:hover:border-stone-700",
         isDragging && "opacity-50",
       )}
       onClick={() => onSelect(step.id)}
     >
       <button
-        className="cursor-grab active:cursor-grabbing text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 touch-none p-2.5 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40 rounded"
+        className="cursor-grab active:cursor-grabbing text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 touch-none p-2.5 focus:outline-none focus:ring-2 focus:ring-[rgb(var(--primary))/0.4] rounded"
         {...attributes}
         {...listeners}
       >

@@ -10,7 +10,7 @@ export function Card({ hover, className, children, ...props }: CardProps) {
     <div
       className={clsx(
         "stepflow-card p-6",
-        hover && "hover:border-[var(--primary)]/30 transition-all duration-200",
+        hover && "hover:border-[rgb(var(--primary))/0.3] transition-all duration-200",
         className,
       )}
       {...props}
