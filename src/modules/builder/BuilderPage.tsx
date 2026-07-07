@@ -59,7 +59,7 @@ export function BuilderPage() {
     return (
       <div className="flex items-center justify-center h-[60vh]">
         <div className="text-center">
-          <h2 className="text-xl font-semibold mb-2">Form not found</h2>
+          <h2 className="text-2xl font-semibold mb-2">Form not found</h2>
           <Button onClick={() => navigate("/")}>Back to Dashboard</Button>
         </div>
       </div>
@@ -172,7 +172,7 @@ export function BuilderPage() {
                 <svg className="w-10 h-10 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                <p className="text-sm">Select a step from the sidebar to edit, or add a new step.</p>
+                <p className="text-base">Select a step from the sidebar to edit, or add a new step.</p>
               </div>
             </div>
           ) : (

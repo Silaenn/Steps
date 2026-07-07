@@ -13,6 +13,8 @@ import {
 import type { Form, FormResponse, Step } from "../../core/types";
 import { Star } from "lucide-react";
 
+const CHART_TICK_FONT_SIZE = 12;
+
 const COLORS = [
   "var(--chart-1)",
   "var(--chart-2)",
@@ -60,8 +62,8 @@ function SelectChart({ step, responses }: { step: Step; responses: FormResponse[
       <h4 className="font-medium text-sm mb-3">{step.title}</h4>
       <ResponsiveContainer width="100%" height={200}>
         <BarChart data={data}>
-          <XAxis dataKey="name" tick={{ fontSize: 12 }} />
-          <YAxis tick={{ fontSize: 12 }} />
+          <XAxis dataKey="name" tick={{ fontSize: CHART_TICK_FONT_SIZE }} />
+          <YAxis tick={{ fontSize: CHART_TICK_FONT_SIZE }} />
           <Tooltip />
           <Bar dataKey="value" fill="var(--chart-1)" radius={[4, 4, 0, 0]} />
         </BarChart>
@@ -131,7 +133,7 @@ function RatingChart({ step, responses }: { step: Step; responses: FormResponse[
       <ResponsiveContainer width="100%" height={200}>
         <BarChart data={data}>
           <XAxis dataKey="name" tick={<RatingTick />} />
-          <YAxis tick={{ fontSize: 12 }} />
+          <YAxis tick={{ fontSize: CHART_TICK_FONT_SIZE }} />
           <Tooltip />
           <Bar dataKey="value" fill="var(--chart-2)" radius={[4, 4, 0, 0]} />
         </BarChart>
@@ -149,7 +151,7 @@ export function ResponseCharts({ form, responses }: ResponseChartsProps) {
 
   return (
     <div className="mb-8">
-      <h3 className="text-lg font-semibold mb-4">Analytics</h3>
+      <h3 className="text-xl font-semibold mb-4">Analytics</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {chartableSteps.map((step) => {
           if (step.type === "yesno") return <YesNoChart key={step.id} step={step} responses={responses} />;

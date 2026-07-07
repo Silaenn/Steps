@@ -2,7 +2,7 @@ import type { Step } from "./step";
 
 export interface FormTheme {
   primaryColor: string;
-  fontFamily: string;
+  fontFamily?: string;
   borderRadius: "none" | "md" | "lg" | "xl" | "full";
   backgroundStyle: "solid" | "gradient";
   backgroundValue: string;
@@ -10,7 +10,7 @@ export interface FormTheme {
 
 export const DEFAULT_THEME: FormTheme = {
   primaryColor: "#C75B39",
-  fontFamily: "Space Grotesk, Outfit, system-ui, sans-serif",
+  fontFamily: "",
   borderRadius: "lg",
   backgroundStyle: "solid",
   backgroundValue: "#ffffff",

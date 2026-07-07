@@ -74,7 +74,7 @@ export function RunnerPage() {
     return (
       <div className="flex items-center justify-center h-[60vh]">
         <div className="text-center">
-          <h2 className="text-xl font-semibold mb-2">Form not found</h2>
+          <h2 className="text-2xl font-semibold mb-2">Form not found</h2>
           <Link to="/" className="text-[var(--primary)] hover:underline">Back to Dashboard</Link>
         </div>
       </div>
@@ -92,7 +92,7 @@ export function RunnerPage() {
           <div className="w-20 h-20 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-4">
             <CheckCircle className="w-10 h-10 text-green-500" />
           </div>
-          <h2 className="text-2xl font-bold mb-2">Response Submitted!</h2>
+          <h2 className="text-3xl font-bold mb-2">Response Submitted!</h2>
           <p className="text-gray-500 dark:text-stone-400 mb-8">Thank you for completing the form.</p>
           <button
             onClick={() => { setCurrentStep(0); setAnswers({}); setErrors({}); setCompleted(false); }}
@@ -171,7 +171,7 @@ export function RunnerPage() {
               {step && (
                 <div className="space-y-8">
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
                       {step.title || `Step ${currentStep + 1}`}
                     </h2>
                     {step.description && (

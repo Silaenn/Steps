@@ -11,8 +11,15 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Outfit", "system-ui", "sans-serif"],
-        heading: ["Space Grotesk", "Outfit", "system-ui", "sans-serif"],
+        sans: ["Outfit", "Outfit Fallback", "system-ui", "sans-serif"],
+        heading: ["Space Grotesk", "Space Grotesk Fallback", "Outfit Fallback", "system-ui", "sans-serif"],
+      },
+      fontSize: {
+        h1: ["1.875rem", { lineHeight: "1.3", fontWeight: "700" }],
+        h2: ["1.5rem", { lineHeight: "1.35", fontWeight: "600" }],
+        h3: ["1.25rem", { lineHeight: "1.4", fontWeight: "600" }],
+        body: ["1rem", { lineHeight: "1.625" }],
+        caption: ["0.75rem", { lineHeight: "1.5" }],
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",

@@ -15,7 +15,7 @@ export function ResponsesPage() {
     return (
       <div className="flex items-center justify-center h-[60vh]">
         <div className="text-center">
-          <h2 className="text-xl font-semibold mb-2">Form not found</h2>
+          <h2 className="text-2xl font-semibold mb-2">Form not found</h2>
           <Link to="/" className="text-[var(--primary)] hover:underline">Back to Dashboard</Link>
         </div>
       </div>
@@ -33,8 +33,8 @@ export function ResponsesPage() {
           <ChevronLeft className="w-5 h-5" />
         </Link>
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{form.title}</h1>
-          <p className="text-sm text-gray-500 dark:text-stone-400 mt-1">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">{form.title}</h1>
+          <p className="text-base text-gray-500 dark:text-stone-400 mt-1">
             {responses.length} response{responses.length !== 1 && "s"}
           </p>
         </div>
