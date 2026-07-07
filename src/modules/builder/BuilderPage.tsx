@@ -219,7 +219,7 @@ export function BuilderPage() {
                     id="required"
                     checked={selectedStep.required}
                     onChange={(e) => handleUpdateStep({ required: e.target.checked })}
-                    className="rounded border-gray-300 text-[var(--primary)] focus:ring-[var(--primary])"
+                    className="rounded border-gray-300 text-[var(--primary)] focus:ring-[var(--primary)]"
                   />
                   <label htmlFor="required" className="text-sm font-medium">
                     Required field

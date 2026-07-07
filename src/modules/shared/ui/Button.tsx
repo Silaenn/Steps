@@ -17,7 +17,7 @@ const variants: Record<Variant, string> = {
   ghost:
     "bg-transparent text-gray-600 dark:text-stone-400 hover:bg-gray-100 dark:hover:bg-stone-800",
   danger:
-    "bg-red-500 text-white hover:bg-red-600",
+    "bg-red-600 dark:bg-red-900/70 text-white hover:bg-red-700 dark:hover:bg-red-800",
   outline:
     "border border-gray-300 dark:border-stone-600 text-gray-700 dark:text-stone-300 hover:bg-gray-50 dark:hover:bg-stone-800",
 };

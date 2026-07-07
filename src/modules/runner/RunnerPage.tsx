@@ -90,7 +90,7 @@ export function RunnerPage() {
           className="text-center max-w-md"
         >
           <div className="w-20 h-20 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-4">
-            <CheckCircle className="w-10 h-10 text-green-500" />
+            <CheckCircle className="w-10 h-10 text-green-700 dark:text-green-400" />
           </div>
           <h2 className="text-3xl font-bold mb-2">Response Submitted!</h2>
           <p className="text-gray-500 dark:text-stone-400 mb-8">Thank you for completing the form.</p>

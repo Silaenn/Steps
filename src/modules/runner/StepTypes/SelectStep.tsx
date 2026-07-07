@@ -22,7 +22,7 @@ export function SelectStepRenderer({ step, value, error, onChange }: StepInputPr
           </button>
         ))}
       </div>
-      {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
+      {error && <p className="mt-2 text-sm text-red-600 dark:text-red-400">{error}</p>}
     </div>
   );
 }

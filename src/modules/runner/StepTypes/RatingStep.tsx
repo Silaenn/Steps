@@ -24,14 +24,14 @@ export function RatingStepRenderer({ step, value, error, onChange }: StepInputPr
               className={clsx(
                 "w-6 h-6 transition-all",
                 star <= rating
-                  ? "fill-yellow-500 text-yellow-500"
+                  ? "fill-yellow-500 dark:fill-yellow-400 text-yellow-500 dark:text-yellow-400"
                   : "text-gray-500 dark:text-stone-400",
               )}
-            /          >
+            />
           </button>
         ))}
       </div>
-      {error && <p className="mt-2 text-sm text-red-500 text-center">{error}</p>}
+      {error && <p className="mt-2 text-sm text-red-600 dark:text-red-400 text-center">{error}</p>}
     </div>
   );
 }
