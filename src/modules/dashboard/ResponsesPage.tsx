@@ -15,7 +15,7 @@ export function ResponsesPage() {
     return (
       <div className="flex items-center justify-center h-[60vh]">
         <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-2">Form not found</h2>
+          <h2 className="text-2xl font-semibold mb-4">Form not found</h2>
           <Link to="/" className="text-[var(--primary)] hover:underline">Back to Dashboard</Link>
         </div>
       </div>

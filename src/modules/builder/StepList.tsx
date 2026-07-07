@@ -63,7 +63,7 @@ export function StepList({ steps, selectedId, onSelect, onReorder, onAdd, onRemo
 
   return (
     <div className="w-72 border-r border-gray-200 dark:border-stone-800 bg-gray-50 dark:bg-stone-900/50 flex flex-col h-full">
-      <div className="flex-1 overflow-y-auto p-2">
+      <div className="flex-1 overflow-y-auto p-3">
         {steps.length === 0 && (
           <div className="flex flex-col items-center justify-center h-full text-sm text-gray-500 dark:text-stone-400 text-center px-2">
             <div className="w-10 h-10 rounded-lg bg-gray-100 dark:bg-stone-800 flex items-center justify-center mb-2">
@@ -90,7 +90,7 @@ export function StepList({ steps, selectedId, onSelect, onReorder, onAdd, onRemo
         </DndContext>
       </div>
 
-      <div className="relative p-2">
+      <div className="relative p-3">
         <button
           onClick={() => setShowAddMenu(!showAddMenu)}
           className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg border-2 border-dashed border-gray-300 dark:border-stone-600 text-sm text-gray-500 dark:text-stone-400 hover:border-gray-400 dark:hover:border-stone-500 hover:text-gray-700 dark:hover:text-stone-200 transition-all"

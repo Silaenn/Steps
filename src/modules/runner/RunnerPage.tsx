@@ -74,7 +74,7 @@ export function RunnerPage() {
     return (
       <div className="flex items-center justify-center h-[60vh]">
         <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-2">Form not found</h2>
+          <h2 className="text-2xl font-semibold mb-4">Form not found</h2>
           <Link to="/" className="text-[var(--primary)] hover:underline">Back to Dashboard</Link>
         </div>
       </div>
@@ -92,7 +92,7 @@ export function RunnerPage() {
           <div className="w-20 h-20 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-4">
             <CheckCircle className="w-10 h-10 text-green-700 dark:text-green-400" />
           </div>
-          <h2 className="text-3xl font-bold mb-2">Response Submitted!</h2>
+          <h2 className="text-3xl font-bold mb-4">Response Submitted!</h2>
           <p className="text-gray-500 dark:text-stone-400 mb-8">Thank you for completing the form.</p>
           <button
             onClick={() => { setCurrentStep(0); setAnswers({}); setErrors({}); setCompleted(false); }}
@@ -118,7 +118,7 @@ export function RunnerPage() {
 
   return (
     <div className="flex-1 flex flex-col">
-      <div className="w-full bg-gray-100 dark:bg-stone-800 h-1.5">
+      <div className="w-full bg-gray-100 dark:bg-stone-800 h-2">
         <motion.div
           className="h-full bg-[var(--primary)]"
           initial={false}
@@ -136,7 +136,7 @@ export function RunnerPage() {
         </Link>
         <div>
           <h1 className="text-base font-semibold text-gray-900 dark:text-white">{form.title}</h1>
-          <p className="text-xs text-gray-500 dark:text-stone-400 mt-0.5">Step {currentStep + 1} of {form.steps.length}</p>
+          <p className="text-xs text-gray-500 dark:text-stone-400 mt-1">Step {currentStep + 1} of {form.steps.length}</p>
         </div>
       </div>
 
@@ -171,7 +171,7 @@ export function RunnerPage() {
               {step && (
                 <div className="space-y-8">
                   <div>
-                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
                       {step.title || `Step ${currentStep + 1}`}
                     </h2>
                     {step.description && (
@@ -196,7 +196,7 @@ export function RunnerPage() {
             <button
               onClick={handlePrev}
               disabled={currentStep === 0}
-              className="inline-flex items-center gap-1.5 px-5 py-2.5 text-sm font-medium text-gray-500 dark:text-stone-400 hover:text-gray-700 dark:hover:text-stone-200 disabled:opacity-30 disabled:pointer-events-none transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-3 text-sm font-medium text-gray-500 dark:text-stone-400 hover:text-gray-700 dark:hover:text-stone-200 disabled:opacity-30 disabled:pointer-events-none transition-colors"
             >
               <ChevronLeft className="w-4 h-4" />
               Previous
@@ -204,7 +204,7 @@ export function RunnerPage() {
 
             <button
               onClick={handleNext}
-              className="inline-flex items-center gap-1.5 px-6 py-2.5 bg-[var(--primary)] text-white rounded-lg text-sm font-medium hover:brightness-110 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--primary)] text-white rounded-lg text-sm font-medium hover:brightness-110 transition-all"
             >
               {isLastStep ? "Submit" : "Next"}
               {!isLastStep && <ArrowRight className="w-4 h-4" />}

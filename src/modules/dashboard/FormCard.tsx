@@ -22,7 +22,7 @@ export function FormCard({ form, onDelete, onDuplicate }: FormCardProps) {
             {form.title}
           </h3>
           {form.description && (
-            <p className="text-sm text-gray-500 dark:text-stone-400 truncate mt-0.5">
+            <p className="text-sm text-gray-500 dark:text-stone-400 truncate mt-1">
               {form.description}
             </p>
           )}
