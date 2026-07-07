@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import { MotionConfig } from "framer-motion";
 import { Layout } from "./modules/shared/Layout";
 import { DashboardPage } from "./modules/dashboard/DashboardPage";
 import { BuilderPage } from "./modules/builder/BuilderPage";
@@ -17,6 +18,7 @@ export default function App() {
   }, []);
 
   return (
+    <MotionConfig reducedMotion="user">
     <Layout>
       <Routes>
         <Route path="/" element={<DashboardPage />} />
@@ -26,5 +28,6 @@ export default function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Layout>
+    </MotionConfig>
   );
 }

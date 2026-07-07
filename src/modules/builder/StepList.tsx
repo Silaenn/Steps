@@ -93,7 +93,7 @@ export function StepList({ steps, selectedId, onSelect, onReorder, onAdd, onRemo
       <div className="relative p-3">
         <button
           onClick={() => setShowAddMenu(!showAddMenu)}
-          className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg border-2 border-dashed border-gray-300 dark:border-stone-600 text-sm text-gray-500 dark:text-stone-400 hover:border-gray-400 dark:hover:border-stone-500 hover:text-gray-700 dark:hover:text-stone-200 transition-all"
+          className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg border-2 border-dashed border-gray-300 dark:border-stone-600 text-sm text-gray-500 dark:text-stone-400 hover:border-gray-400 dark:hover:border-stone-500 hover:text-gray-700 dark:hover:text-stone-200 transition-all focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -102,7 +102,7 @@ export function StepList({ steps, selectedId, onSelect, onReorder, onAdd, onRemo
         </button>
         {showAddMenu && (
           <>
-            <div className="fixed inset-0 z-10" onClick={() => setShowAddMenu(false)} />
+            <div className="fixed inset-0 z-10 cursor-pointer" onClick={() => setShowAddMenu(false)} />
           </>
         )}
         <AnimatePresence>
@@ -112,14 +112,14 @@ export function StepList({ steps, selectedId, onSelect, onReorder, onAdd, onRemo
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
-              transition={{ type: 'tween', duration: 0.15, ease: 'easeOut' }}
+              transition={{ type: 'tween', duration: 0.2, ease: 'easeOut' }}
               className="absolute bottom-full left-0 right-0 mb-1 z-20 bg-white dark:bg-stone-800 rounded-lg border border-gray-200 dark:border-stone-700 p-2 max-h-64 overflow-y-auto"
             >
               {STEP_TYPES.map(({ type, label, icon }) => (
                 <button
                   key={type}
                   onClick={() => { onAdd(type); setShowAddMenu(false); }}
-                  className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-stone-700 transition-colors text-left"
+                  className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-stone-700 transition-colors text-left focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40"
                 >
                   <span className="inline-flex items-center justify-center w-5 h-5 shrink-0">
                     {icon}

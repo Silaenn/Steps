@@ -84,7 +84,7 @@ export function BuilderPage() {
   };
 
   return (
-    <div className="flex flex-col flex-1">
+    <div className="flex flex-col flex-1 animate-fade-in">
       <div className="p-6 border-b border-gray-200 dark:border-stone-800 bg-white dark:bg-stone-950 shrink-0">
           <div className="flex items-center gap-2 sm:gap-4">
             <Button variant="ghost" onClick={() => navigate("/")} className="shrink-0">
@@ -93,13 +93,13 @@ export function BuilderPage() {
             </Button>
             <div className="flex-1 min-w-0">
               <input
-                className="w-full text-lg font-bold bg-transparent border-none outline-none focus:ring-0 text-gray-900 dark:text-white"
+                className="w-full text-lg font-bold bg-transparent border-none text-gray-900 dark:text-white focus:outline-none focus:ring-0"
                 value={form.title}
                 onChange={(e) => updateForm(form.id, { title: e.target.value })}
                 placeholder="Form Title"
               />
               <input
-                className="w-full text-sm text-gray-500 dark:text-stone-400 bg-transparent border-none outline-none focus:ring-0 placeholder-gray-500 dark:placeholder-stone-400"
+                className="w-full text-sm text-gray-500 dark:text-stone-400 bg-transparent border-none placeholder-gray-500 dark:placeholder-stone-400 focus:outline-none focus:ring-0"
                 value={form.description}
                 onChange={(e) => updateForm(form.id, { description: e.target.value })}
                 placeholder="Form description (optional)"
@@ -115,7 +115,7 @@ export function BuilderPage() {
         <div className="flex flex-1 overflow-hidden">
           {/* Mobile: floating toggle button */}
           <button
-            className="md:hidden fixed bottom-6 right-6 z-50 w-12 h-12 rounded-lg bg-[var(--primary)] text-white flex items-center justify-center"
+            className="md:hidden fixed bottom-6 right-6 z-50 w-12 h-12 rounded-lg bg-[var(--primary)] text-white flex items-center justify-center hover:brightness-110 active:brightness-95 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40 transition-all"
             onClick={() => setMobileStepsOpen(!mobileStepsOpen)}
           >
             <Layers className="w-5 h-5" />
@@ -132,7 +132,7 @@ export function BuilderPage() {
                 className="fixed inset-0 top-16 z-30 md:hidden"
                 onClick={() => setMobileStepsOpen(false)}
               >
-                <div className="absolute inset-0 bg-black/50" />
+                <div className="absolute inset-0 bg-black/50 cursor-pointer" />
                 <motion.div
                   initial={{ x: '-100%' }}
                   animate={{ x: 0 }}

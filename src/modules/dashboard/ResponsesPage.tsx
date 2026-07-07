@@ -16,19 +16,19 @@ export function ResponsesPage() {
       <div className="flex items-center justify-center h-[60vh]">
         <div className="text-center">
           <h2 className="text-2xl font-semibold mb-4">Form not found</h2>
-          <Link to="/" className="text-[var(--primary)] hover:underline">Back to Dashboard</Link>
+          <Link to="/" className="text-[var(--primary)] hover:underline focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40 rounded">Back to Dashboard</Link>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="flex-1 flex flex-col">
+    <div className="flex-1 flex flex-col animate-fade-in">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 flex flex-col">
       <div className="flex items-center gap-4 mb-8">
         <Link
           to={'/'}
-          className="p-3 -ml-3 rounded-lg text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 hover:bg-gray-100 dark:hover:bg-stone-800 transition-colors"
+          className="p-3 -ml-3 rounded-lg text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 hover:bg-gray-100 dark:hover:bg-stone-800 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40"
         >
           <ChevronLeft className="w-5 h-5" />
         </Link>

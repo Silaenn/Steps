@@ -14,7 +14,7 @@ export function RatingStepRenderer({ step, value, error, onChange }: StepInputPr
             key={star}
             onClick={() => onChange(star)}
             className={clsx(
-              "w-12 h-12 rounded-lg text-xl sm:text-2xl flex items-center justify-center transition-all",
+              "w-12 h-12 rounded-lg text-xl sm:text-2xl flex items-center justify-center transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40",
               star <= rating
                 ? "bg-yellow-100 dark:bg-yellow-900/30 scale-110"
                 : "bg-gray-100 dark:bg-stone-800 text-gray-500 dark:text-stone-400",

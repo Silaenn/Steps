@@ -55,7 +55,7 @@ export function SortableStepItem({ step, index, isSelected, onSelect, onRemove }
       onClick={() => onSelect(step.id)}
     >
       <button
-        className="cursor-grab active:cursor-grabbing text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 touch-none p-2.5"
+        className="cursor-grab active:cursor-grabbing text-gray-500 hover:text-gray-600 dark:text-stone-400 dark:hover:text-stone-300 touch-none p-2.5 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/40 rounded"
         {...attributes}
         {...listeners}
       >
@@ -75,7 +75,7 @@ export function SortableStepItem({ step, index, isSelected, onSelect, onRemove }
 
       <button
         onClick={(e) => { e.stopPropagation(); onRemove(step.id); }}
-        className="p-2.5 text-gray-500 dark:text-stone-500 hover:text-red-500 transition-colors"
+        className="p-2.5 text-gray-500 dark:text-stone-500 hover:text-red-500 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500/40 rounded"
       >
         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
