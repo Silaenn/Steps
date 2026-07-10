@@ -23,8 +23,6 @@ export function ResponseTable({ form, responses }: ResponseTableProps) {
     );
   }
 
-  const stepTitles = form.steps.map((s, i) => s.title || `Step ${i + 1}`);
-
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
@@ -35,14 +33,14 @@ export function ResponseTable({ form, responses }: ResponseTableProps) {
           <Button
             size="sm"
             variant="secondary"
-            onClick={() => exportResponsesToCSV(responses, stepTitles, form.title)}
+            onClick={() => exportResponsesToCSV(responses, form.steps, form.title)}
           >
             Export CSV
           </Button>
           <Button
             size="sm"
             variant="secondary"
-            onClick={() => exportResponsesToJSON(responses, form.title)}
+            onClick={() => exportResponsesToJSON(responses, form.steps, form.title)}
           >
             Export JSON
           </Button>
